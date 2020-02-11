@@ -2,7 +2,7 @@
 
 ## Sujet
 
-### I. Il n’y a pas de mal à se faire du bien
+### I.    Il n’y a pas de mal à se faire du bien
 
   De temps en temps, il n’est pas pour déplaire de flâter son ego. Nous allons donc
 réaliser une petite application pour se brosser dans le sens du poil.
@@ -11,7 +11,7 @@ réaliser une petite application pour se brosser dans le sens du poil.
 pour vous faire mettre les mains dans le cambouis. Il y a donc quelques restrictions dans
 ce but.
 
-### II. Ce qu’il faut réaliser
+### II.   Ce qu’il faut réaliser
 
   Votre objectif est de réaliser un petit programme qui affiche un objet 3D conçu au
 moyen d’un logiciel de modélisation, comme Blender par exemple. L’objet 3D est stocké
@@ -26,6 +26,8 @@ trois axes, dans les deux directions.
 
   Enfin, une texture doit pouvoir être appliquée basiquement sur l’objet lorsqu’on appuye sur une touche dédiée, et la même touche permet de revenir à l’affichage des couleurs.
 Une transition douce est demandée entre les deux.
+
+
 Les contraintes techniques sont les suivantes :
 
 - Coder sur les dumps à la norme, en C : l’API première OpenGL est en C, frottezvous y. Certaines surcouches de certains langages font plein de choses automatiquement, ça serait trop facile.
@@ -39,6 +41,7 @@ obligatoirement.
 la gestion de la fenêtre et des évènements. Vous avez le droit d’utiliser votre libft.
 Dans le doute, utilisez la MinilibX avec son extension OpenGL. Pas de librairie
 pour loader l’objet 3D, ni pour vous faire les matrices, ou charger les shaders.
+
 
   Comme il s’agit d’un programme d’auto-congratulation, il est indispensable que vous
 puissiez présenter en soutenance au moins le logo de 42 fourni avec ce sujet, tournant autour de son axe central (attention, pas autour de l’un des bords), avec des niveaux de gris
