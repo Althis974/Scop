@@ -1,0 +1,29 @@
+# CMake files
+
+CMakeLists.txt
+cmake-build-debug/
+
+# default executable
+
+a.out
+
+# clion's stuff
+
+.idea/
+
+# objects file
+
+build/
+*.o
+
+# random files
+
+
+
+# valgrind files
+
+*.dSYM/
+
+# executable
+
+scop
