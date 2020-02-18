@@ -17,6 +17,10 @@ a.out
 build/
 *.o
 
+# lib files
+
+*.a
+
 # random files
 
 
