@@ -16,6 +16,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <fcntl.h>
+#include "../libft/libft.h"
 #include <SDL2/SDL.h>
 
 #define GL_SILENCE_DEPRECATION
@@ -38,8 +40,26 @@ typedef struct		s_sdl
 
 }					t_sdl;
 
-int					sdl_init(t_sdl *scene);
-void				sdl_run(t_sdl scene);
-void				sdl_exit(t_sdl scene);
+typedef struct		s_shader
+{
+	GLuint			vrtxID;
+	GLuint			frgmtID;
+	GLuint			prgmID;
+	char *			vrtxScr;
+	char *			frgmtSrc;
+
+}					t_shader;
+
+// SDL
+
+int					SDLInit(t_sdl *scene);
+void				SDLRun(t_sdl scene);
+void				SDLExit(t_sdl scene);
+
+// Shader
+
+t_shader			initShader(char *vrtxScr, char *frgmtSrc);
+int					loadShader(t_shader *shader);
+int					compileShader(GLuint shader, GLenum type, char *filename);
 
 #endif //SCOP_SCOP_H

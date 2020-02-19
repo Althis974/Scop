@@ -18,21 +18,22 @@ int		main()
 	t_sdl	scene;
 
 
-	sdl_init(&scene);
+	if (SDLInit(&scene))
+		return (-1);
 
-	//Output OpenGL Version
+	/*//Output OpenGL Version
 	const unsigned char *version = glGetString(GL_VERSION);
 	if (version == NULL)
 	{
 		fprintf(stderr, "Unable to determine OpenGL version\n");
 		exit(1);
 	}
-	fprintf(stderr, "OpenGl Version: %s\n", version);
+	fprintf(stderr, "OpenGl Version: %s\n", version);*/
 
-	sdl_run(scene);
+	SDLRun(scene);
 
 	// On quitte la SDL
-	sdl_exit(scene);
+	SDLExit(scene);
 
 	return (0);
 }
