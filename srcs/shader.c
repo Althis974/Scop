@@ -40,20 +40,10 @@ int		loadShader(t_shader *shader)
 
 	// Compile shaders
 	if((shader->vrtxID = compileShader(shader->vrtxID, GL_VERTEX_SHADER, shader->vrtxScr)) < 0)
-	{
-		printf("nique");
 		return (-1);
-	}
-
-	printf("vrtxID %d\n", shader->vrtxID);
 
 	if((shader->frgmtID = compileShader(shader->frgmtID, GL_FRAGMENT_SHADER, shader->frgmtSrc)) < 0)
-	{
-		printf("tamere");
 		return (-1);
-	}
-
-	printf("frgmtID %d\n", shader->frgmtID);
 
 	// Create program
 	shader->prgmID = glCreateProgram();
@@ -65,9 +55,9 @@ int		loadShader(t_shader *shader)
 
 
 	// Lock shaders
-	glBindAttribLocation(shader->prgmID, 0, "in_position");
-	//glBindAttribLocation(shader->prgmID, 1, "in_Color");
-	//glBindAttribLocation(shader->prgmID, 2, "in_TexCoord0");
+	glBindAttribLocation(shader->prgmID, 0, "in_Vertex");
+	glBindAttribLocation(shader->prgmID, 1, "in_Color");
+	glBindAttribLocation(shader->prgmID, 2, "in_TexCoord0");
 
 
 	// Link program
@@ -78,7 +68,6 @@ int		loadShader(t_shader *shader)
 	GLint linkError;
 	glGetProgramiv(shader->prgmID, GL_LINK_STATUS, &linkError);
 
-	printf("yo %d\n", shader->prgmID);
 
 	if(linkError != GL_TRUE)
 	{
@@ -125,7 +114,7 @@ int					compileShader(GLuint shader, GLenum type, char *filename)
 		return (-1);
 	}
 
-
+	// Open file
 	FILE *f;
 	f = fopen(filename, "r");
 	if (!f)
@@ -134,124 +123,33 @@ int					compileShader(GLuint shader, GLenum type, char *filename)
 		return (-1);
 	}
 
+	// Read file
 	size_t len = 0;
 	ssize_t read;
 	char *line = NULL;
-	char *srcCode = NULL;
+	char *srcShader = NULL;
 
 	while((read = getline(&line, &len, f)) != -1)
 	{
-		//printf("line = %s", line);
-		if (srcCode != NULL)
-			srcCode = ft_strjoin(srcCode, line, 0);
+		if (srcShader != NULL)
+			srcShader = ft_strjoin(srcShader, line, 1);
 		else
 		{
-			if (!(srcCode = malloc((ft_strlen(line) + 1) * sizeof(char*))))
+			if (!(srcShader = malloc((ft_strlen(line) + 1) * sizeof(char*))))
 				return (-1);
-			srcCode = ft_strcpy(srcCode, line);
+			srcShader = ft_strcpy(srcShader, line);
 		}
-		//printf("srcCode = %s", srcCode);
-	}
-
-	printf("srcCode:\n%s\n", srcCode);
-
-	// Flux de lecture
-	//std::ifstream fichier(fichierSource.c_str());
-/*
-	int		fd;
-
-	// Test d'ouverture
-
-	printf("bouya");
-
-	if((fd = (open(filename, O_RDONLY))) == -1)
-	{
-		printf("Error: %s is missing.\n", filename);
-		glDeleteShader(shader);
-
-		return (-1);
-	}
-
-	printf("bouyata");
-
-	// Strings permettant de lire le code source
-
-	int		ret;
-	char 	*line;
-	char 	*srcCode;
-
-
-	// Lecture
-
-	//while(getline(fichier, line))
-	//	srcCode += line + '\n';
-
-	ret = get_next_line(fd, &line);
-	printf("poto: %s", line);
-	free(line);
-
-	if ((ret == 0) || (ret == -1))
-	{
-		printf("Error: %s is wrong.\n", filename);
-		glDeleteShader(shader);
-
-		return (-1);
-	}
-
-	while (get_next_line(fd, &line))
-	{
-		printf("pota: %s", line);
-		free(line);
-	}
-
-	if ((close(fd)) == -1)
-	{
-		printf("Error: can't close %s\n", filename);
-		glDeleteShader(shader);
-
-		return (-1);
 	}
 
 
-	// Fermeture du fichier
+	// Get source code
+	const GLchar* srcCode = srcShader;
 
-	//fichier.close();
-
-
-	char *tmp;
-
-	fd = (open(filename, O_RDONLY));
-	ret = get_next_line(fd, &line);
-	tmp = line;
-	while (get_next_line(fd, &line))
-	{
-		//printf("line = %s", line);
-		srcCode = ft_strjoin(tmp, line, 0);
-	}
-	//printf("%s\n", srcCode);
-	srcCode += '\0';
-	close(fd);
-*/
-
-	//printf("after: srcCode = %s\n", srcCode);
-
-	// RÈcupÈration de la chaine C du code source
-
-	//const GLchar* chaineCodeSource = srcCode.c_str();
-
-	const GLchar* chaineCodeSource = srcCode;
-
-	printf("chaineCodeSource:\n%s\n", chaineCodeSource);
-
-	// Envoi du code source au shader
-
-	glShaderSource(shader, 1, &chaineCodeSource, 0);
-
+	// Send source code to shader
+	glShaderSource(shader, 1, &srcCode, 0);
 
 	// Compilation du shader
 	glCompileShader(shader);
-
-	printf("shader = %d\n", shader);
 
 	// Check compile
 	GLint compileError;
@@ -288,5 +186,8 @@ int					compileShader(GLuint shader, GLenum type, char *filename)
 		return (-1);
 	}
 	else
+	{
+		free(srcShader);
 		return (shader);
+	}
 }

@@ -35,5 +35,7 @@ int		main()
 	// On quitte la SDL
 	SDLExit(scene);
 
+	//while(1);
+
 	return (0);
 }
