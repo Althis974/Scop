@@ -68,40 +68,59 @@ int		SDLInit(t_sdl *scene)
 void	SDLRun(t_sdl scene)
 {
 	float vertices[] = {-0.5f, -0.5f,   0.0f, 0.5f,   0.5f, -0.5f}; // Triangle
+	float couleurs[] = {0.0f, 204.0f / 255.0f, 1.0f,    0.0f, 204.0f / 255.0f, 1.0f,    0.0f, 204.0f / 255.0f, 1.0f};
 
 	t_shader shader;
 
 	// Load and compile shaders
 
-	shader = initShader("/Users/rlossy/Cursus/Scop/Shaders/basique2D.vert", "/Users/rlossy/Cursus/Scop/Shaders/basique2D.frag");
+	shader = initShader("/Users/rlossy/Cursus/Scop/Shaders/couleur2D.vert", "/Users/rlossy/Cursus/Scop/Shaders/couleur2D.frag");
 	loadShader(&shader);
 
 	//vao is a buffer of buffers (so will point vertices and colors)
-	//vbo is for the triangle points
-	GLuint vao, vbo;
+	//vbo_v is for the triangle points
+	GLuint vao, vbo_v, vbo_c;
 
 	//Generate Vertex Array and bind it
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
 
 	//Generate the buffer object for the vertices
-	glGenBuffers(1, &vbo);
+	glGenBuffers(1, &vbo_v);
 
 	//Bind it for the next few calls
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo_v);
 
-	//Upload triangle data to the vbo
+	//Upload triangle data to the vbo_v
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-	//We get the location of the 'in_Vertex' named in the vertex shader
+	//Get the location of the 'in_Vertex' named in the vertex shader
 	GLuint in_Vertex_loc = glGetAttribLocation(shader.prgmID, "in_Vertex");
 
 	//Set the location in the vao to this buffer and tell it how to access the data.
-	//We have 2 points per vertex hence 2, and sizeof(float) * 2 and the GL_FLOAT
+	//2 points per vertex hence 2, and sizeof(float) * 2 and the GL_FLOAT
 	glVertexAttribPointer(in_Vertex_loc, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
 	// Enable buffer
 	glEnableVertexAttribArray(in_Vertex_loc);
+
+	//Generate the vbo for colors
+	glGenBuffers(1, &vbo_c);
+
+	//Bind it for the next few calls
+	glBindBuffer(GL_ARRAY_BUFFER, vbo_c);
+
+	//Upload the color data in the same way as triangles
+	glBufferData(GL_ARRAY_BUFFER, sizeof(couleurs), couleurs, GL_STATIC_DRAW);
+
+	//Get the location of the 'in_Color' named in the vertex shader
+	GLint in_Color_loc = glGetAttribLocation(shader.prgmID, "in_Color");
+
+	//This time it's RGBA values so set up 4 floats per vertex
+	glVertexAttribPointer(in_Color_loc, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, 0);
+
+	//Enable the vbo
+	glEnableVertexAttribArray(in_Color_loc);
 
 	// Enable shader
 	glUseProgram(shader.prgmID);
@@ -121,10 +140,12 @@ void	SDLRun(t_sdl scene)
 		// Display
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 
-
 		// Update
 		SDL_GL_SwapWindow(scene.win);
 	}
+
+	// Disable vertices array
+	glDisableVertexAttribArray(1);
 
 	// Disable vertices array
 	glDisableVertexAttribArray(0);
