@@ -9,6 +9,7 @@
 /*   Updated: 2020/02/20 10:52:39 by rlossy           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../includes/scop.h"
 
 t_shader	initShader(char *vrtxScr, char *frgmtSrc)
