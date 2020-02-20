@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   ft_strtrim.c                                     .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rlossy <marvin@le-101.fr>                  +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/24 09:25:03 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2018/05/02 14:34:46 by rlossy      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlossy <rlossy@student.le-101.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/20 14:04:50 by rlossy            #+#    #+#             */
+/*   Updated: 2020/02/20 14:13:02 by rlossy           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
@@ -22,11 +22,11 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	len = ft_strlen(s) - 1;
 	start = 0;
-	while (WSP(s[start]))
+	while (s[start] == '\t' || s[start] == '\n' || s[start] == ' ')
 		start++;
 	if (s[start] == '\0')
 		return (ft_strdup(s + start));
-	while ((WSP(s[len]) && len > 0))
+	while ((s[len] == '\t' || s[len] == '\n' || s[len] == ' ') && len > 0)
 		len--;
 	return (ft_strsub(s, start, (len - start + 1)));
 }
