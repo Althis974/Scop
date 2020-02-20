@@ -3,7 +3,7 @@
 #version 150 core
 
 
-// Entrées
+// Entrees
 
 in vec2 in_Vertex;
 in vec3 in_Color;

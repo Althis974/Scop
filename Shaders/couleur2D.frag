@@ -3,7 +3,7 @@
 #version 150 core
 
 
-// Entrée
+// Entree
 
 in vec3 color;
 
