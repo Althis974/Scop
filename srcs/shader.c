@@ -1,16 +1,14 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   shader.c                                         .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: rlossy <rlossy@student.le-101.fr>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/18 10:09:42 by rlossy       #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/18 10:09:42 by rlossy      ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   shader.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlossy <rlossy@student.le-101.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/20 10:52:39 by rlossy            #+#    #+#             */
+/*   Updated: 2020/02/20 10:52:39 by rlossy           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
-
 #include "../includes/scop.h"
 
 t_shader	initShader(char *vrtxScr, char *frgmtSrc)
@@ -134,13 +132,10 @@ int					compileShader(GLuint shader, GLenum type, char *filename)
 		if (srcShader != NULL)
 			srcShader = ft_strjoin(srcShader, line, 1);
 		else
-		{
-			if (!(srcShader = malloc((ft_strlen(line) + 1) * sizeof(char*))))
-				return (-1);
-			srcShader = ft_strcpy(srcShader, line);
-		}
+			srcShader = ft_strdup(line);
 	}
-
+	if (line)
+		free(line);
 
 	// Get source code
 	const GLchar* srcCode = srcShader;
@@ -151,10 +146,11 @@ int					compileShader(GLuint shader, GLenum type, char *filename)
 	// Compilation du shader
 	glCompileShader(shader);
 
+	free(srcShader);
+
 	// Check compile
 	GLint compileError;
 	glGetShaderiv(shader, GL_COMPILE_STATUS, &compileError);
-
 
 	// Check error
 	if(compileError != GL_TRUE)
@@ -176,7 +172,7 @@ int					compileShader(GLuint shader, GLenum type, char *filename)
 
 
 		// Print error
-		printf("SHADER: %s\n", error);
+		printf("%s\n", error);
 
 
 		// Free
@@ -187,7 +183,6 @@ int					compileShader(GLuint shader, GLenum type, char *filename)
 	}
 	else
 	{
-		free(srcShader);
 		return (shader);
 	}
 }
