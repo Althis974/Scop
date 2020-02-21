@@ -23,7 +23,6 @@ int		main()
 
 	SDLRun(scene);
 
-	// On quitte la SDL
 	SDLExit(scene);
 
 	return (0);

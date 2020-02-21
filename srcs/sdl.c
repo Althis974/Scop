@@ -36,7 +36,7 @@ int		SDLInit(t_sdl *scene)
 
 
 	// Create window
-	scene->win = SDL_CreateWindow("Test SDL 2.0", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+	scene->win = SDL_CreateWindow(WIN_NAME, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIN_W, WIN_H, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
 
 	if(!scene->win)
 	{

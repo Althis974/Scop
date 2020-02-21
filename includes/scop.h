@@ -28,8 +28,8 @@
 #	define GL_BGR 0x80E0
 #endif
 
-# define WIN_H 1000
-# define WIN_W 1000
+# define WIN_W 800
+# define WIN_H 600
 # define WIN_NAME "Scop"
 
 typedef struct		s_sdl
