@@ -46,6 +46,17 @@ typedef struct		s_vec
 }					t_vec;
 
 /*
+**	[Matrix structure]
+**
+**	m is a 4*4 matrix
+*/
+
+struct				s_mat
+{
+	float			m[4][4];
+}					t_mat;
+
+/*
 **	[Color structure]
 **
 **	Shade of color from RGB
