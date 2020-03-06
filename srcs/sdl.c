@@ -77,19 +77,15 @@ void	SDLRun(t_sdl scene)
 	shader = initShader("/Users/rlossy/Cursus/Scop/Shaders/couleur2D.vert", "/Users/rlossy/Cursus/Scop/Shaders/couleur2D.frag");
 	loadShader(&shader);
 
-	//vao is a buffer of buffers (so will point vertices and colors)
-	//vbo_v is for the triangle points
-	GLuint vao, vbo_v, vbo_c;
-
 	//Generate Vertex Array and bind it
-	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
+	glGenVertexArrays(1, &scene.vao);
+	glBindVertexArray(scene.vao);
 
 	//Generate the buffer object for the vertices
-	glGenBuffers(1, &vbo_v);
+	glGenBuffers(1, &scene.vbo_v);
 
 	//Bind it for the next few calls
-	glBindBuffer(GL_ARRAY_BUFFER, vbo_v);
+	glBindBuffer(GL_ARRAY_BUFFER, scene.vbo_v);
 
 	//Upload triangle data to the vbo_v
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
@@ -105,10 +101,10 @@ void	SDLRun(t_sdl scene)
 	glEnableVertexAttribArray(in_Vertex_loc);
 
 	//Generate the vbo for colors
-	glGenBuffers(1, &vbo_c);
+	glGenBuffers(1, &scene.vbo_c);
 
 	//Bind it for the next few calls
-	glBindBuffer(GL_ARRAY_BUFFER, vbo_c);
+	glBindBuffer(GL_ARRAY_BUFFER, scene.vbo_c);
 
 	//Upload the color data in the same way as triangles
 	glBufferData(GL_ARRAY_BUFFER, sizeof(couleurs), couleurs, GL_STATIC_DRAW);

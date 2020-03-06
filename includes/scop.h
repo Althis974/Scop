@@ -32,12 +32,25 @@
 # define WIN_H 600
 # define WIN_NAME "Scop"
 
+/*
+**	[SDL structure]
+**
+**	win is a pointer on window
+**	ctxt is the OpenGL context
+**	evnt take care of events
+**	vao is a buffer of buffers
+**	vbo_v is for triangle points
+**	vbo_c is for triangle colors
+*/
+
 typedef struct		s_sdl
 {
 	SDL_Window *	win;
 	SDL_GLContext	ctxt;
 	SDL_Event		evnt;
-
+	GLuint			vao;
+	GLuint 			vbo_v;
+	GLuint			vbo_c;
 }					t_sdl;
 
 typedef struct		s_shader
