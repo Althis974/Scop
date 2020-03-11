@@ -36,7 +36,7 @@ FILENAMES	+=	ft_putallnbr_allsign.c ft_putallnbr_nosign.c ft_wstrlen.c
 FILENAMES	+=	ft_putnwstr.c ft_isvalid_conv.c ft_isalnocast.c
 FILENAMES	+=	ft_wcharnput.c ft_wcharlen.c get_next_line.c ft_word_count.c
 FILENAMES	+=	ft_tab2d_init.c ft_reg.c ft_vec.c ft_vecform.c ft_vecx.c
-FILENAMES   +=  ft_ftoa.c
+FILENAMES   +=  ft_ftoa.c matrix.c ft_atof.c ft_pow.c get_tab_len.c
 
 SOURCES     =   $(addprefix ./, $(FILENAMES))
 OBJECTS     =   $(addprefix build/, $(FILENAMES:.c=.o))

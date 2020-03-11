@@ -51,7 +51,7 @@ typedef struct		s_vec
 **	m is a 4*4 matrix
 */
 
-struct				s_mat
+typedef struct		s_mat
 {
 	float			m[4][4];
 }					t_mat;
@@ -170,6 +170,9 @@ int					ft_word_count(const char *s, char c);
 int					**ft_tab2d_init(size_t x, size_t y);
 double				ft_reg(double x, double min, double max);
 char				*ft_ftoa(double nb);
+double				ft_atof(const char *s);
+double				ft_pow(double nb, int exp);
+int					get_tab_len(void **tab);
 
 t_vec				ft_vadd(t_vec *v1, t_vec *v2);
 t_vec				ft_vsub(t_vec *v1, t_vec *v2);
@@ -188,5 +191,7 @@ void				ft_vreg(t_vec *v, double a, double b);
 double				ft_vdot(t_vec *v1, t_vec *v2);
 double				ft_vlen(t_vec *v);
 double				ft_vdist(t_vec *v1, t_vec *v2);
+
+void				set_matid(t_mat *m, int order);
 
 #endif
