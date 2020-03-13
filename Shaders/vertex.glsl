@@ -1,21 +1,39 @@
-#version 330
+#version 400 core
 
-in vec2 in_position;
-in vec4 in_color;
-out vec2 position;
-out vec4 color;
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 color;
 
+# define PI 3.14159265359
 
-void main() {
-    //We don't do any transforms but here we could apply a transformation to the 
-    //points such as to move or rotate an object in the scene and do the camera
-    //viewpoint
-    //This just passes the position to the fragment shader
-    position = in_position;
-    //This is actually used by opengl to determine the fragements to render
-    //Note that it is a vec4 so the first 2 points are the output points, the
-    //thirds is the point size and the fouth clipping control.
-    gl_Position = vec4(in_position.x, in_position.y, 0.0, 1.0);
-    //We could also change the colors here, but we don't bother
-    color = in_color;
+uniform mat4	mvp;
+uniform int		cmod;
+uniform bool	mmod;
+
+flat out vec4	fragment_color_f;
+smooth out vec4	fragment_color_s;
+out	vec2		texture_coordinates;
+
+vec2	cylinder_mapping()
+{
+	float	u;
+	float	v;
+
+	u = 0.5 + atan(position.z, position.x) / PI * 0.5;
+	v = position.y / 10.0;
+	return (vec2(u, v) * 15);
+}
+
+void	main()
+{
+	gl_Position = mvp * vec4(position, 1.0f);
+	if (cmod == 0)
+		fragment_color_s = vec4(position.y * 0.4f + 0.4f,
+		position.z * 0.1 + position.y * 0.4f + 0.1f, 0.2f, 1.0f);
+	if (cmod == 1)
+		fragment_color_s = vec4(position * 0.4f + 0.4f, 1.0f);
+	fragment_color_f = fragment_color_s;
+	if (mmod)
+		texture_coordinates = cylinder_mapping();
+	else
+		texture_coordinates = vec2(position.x * 2, position.y * 2);
 }

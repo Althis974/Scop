@@ -28,9 +28,12 @@
 #	define GL_BGR 0x80E0
 #endif
 
-# define WIN_W 800
-# define WIN_H 600
+# define WIN_W 1440
+# define WIN_H 1280
 # define WIN_NAME "Scop"
+# define FOV 90
+# define BUFFER_SIZE 128
+# define ID 0x6964
 
 /*
 **	[SDL structure]
@@ -45,28 +48,88 @@
 
 typedef struct		s_sdl
 {
-	SDL_Window *	win;
+	SDL_Window		*win;
 	SDL_GLContext	ctxt;
 	SDL_Event		evnt;
 	GLuint			vao;
 	GLuint 			vbo_v;
 	GLuint			vbo_c;
 }					t_sdl;
-
+/*
 typedef struct		s_shader
 {
 	GLuint			vrtxID;
 	GLuint			frgmtID;
 	GLuint			prgmID;
-	char *			vrtxScr;
-	char *			frgmtSrc;
+	char			*vrtxScr;
+	char			*frgmtSrc;
 
 }					t_shader;
+*/
+
+typedef struct	s_shader
+{
+	GLuint	program;
+	GLint	mvploc;
+	GLint	cmdloc;
+	GLint	smdloc;
+	GLint	tmdloc;
+	GLint	gmdloc;
+	GLint	mmdloc;
+	GLint	texloc;
+}				t_shader;
+
+typedef struct	s_sim
+{
+	t_mat	model;
+	t_mat	view;
+	t_mat	projection;
+	t_mat	mvp;
+}				t_sim;
+
+typedef struct		s_cam
+{
+	t_vec			ori;
+	t_vec			dir;
+	t_vec			target;
+	t_vec			up;
+	t_vec			right;
+	t_vec			front;
+	t_vec			inertia;
+	double			velocity;
+}					t_cam;
+
+typedef struct		s_obj
+{
+	t_mat			translation;
+	t_mat			rotation;
+	GLfloat			*vrtc;
+	GLuint			*faces;
+	int				f_len;
+	int				v_len;
+	int				f_size;
+	int				v_size;
+	int				f_nb;
+	t_vec			sym_axis;
+	t_vec			inertia;
+	//t_texture		texture;
+	double			velocity;
+	char			*filename;
+}					t_obj;
+
+typedef struct		s_env
+{
+	t_sdl			sdl;
+	t_shader 		shader;
+	t_cam 			cam;
+	t_obj			obj;
+	t_sim		sim;
+}					t_env;
 
 // SDL
 
-int					SDLInit(t_sdl *scene);
-void				SDLRun(t_sdl scene);
+int					SDLInit(t_env *env);
+void				SDLRun(t_env *env);
 void				SDLExit(t_sdl scene);
 
 // Shader
@@ -75,4 +138,13 @@ t_shader			initShader(char *vrtxScr, char *frgmtSrc);
 int					loadShader(t_shader *shader);
 int					compileShader(GLuint shader, GLenum type, char *filename);
 
+void			build_shader_program(t_env *env);
+void	camera_look_at_target(t_env *env);
+void	compute_mvp_matrix(t_env *env);
+void			update_shader_uniforms(t_env *env);
+void	create_buffers(t_env *env);
+void	set_projection_matrix(t_env *env, float fov);
+void		parser(t_env *env);
+
+void				error(const char *err);
 #endif //SCOP_SCOP_H

@@ -16,7 +16,7 @@ LIB_DIR		=	./libft
 #LIBX_DIR	=	./minilibx_macos
 SDL2_DIR	=	/Users/rlossy/.brew/Cellar/sdl2/2.0.10/
 HEADER		=	./includes/
-FILENAMES	=	main.c sdl.c shader.c
+FILENAMES	=	main.c sdl.c shader.c parser.c camera.c
 #FILENAMES   +=
 #FILENAMES   +=
 

@@ -53,7 +53,7 @@ typedef struct		s_vec
 
 typedef struct		s_mat
 {
-	float			m[4][4];
+	float			m[16];
 }					t_mat;
 
 /*
@@ -192,6 +192,8 @@ double				ft_vdot(t_vec *v1, t_vec *v2);
 double				ft_vlen(t_vec *v);
 double				ft_vdist(t_vec *v1, t_vec *v2);
 
-void				set_matid(t_mat *m, int order);
+void	set_mat(t_mat *m, float f);
+t_mat	ft_matmul(t_mat *a, t_mat *b);
+t_mat	ft_matranspose(t_mat *m);
 
 #endif
