@@ -28,8 +28,8 @@
 #	define GL_BGR 0x80E0
 #endif
 
-# define WIN_W 1440
-# define WIN_H 1280
+# define WIN_W 800
+# define WIN_H 800
 # define WIN_NAME "Scop"
 # define FOV 90
 # define BUFFER_SIZE 128
