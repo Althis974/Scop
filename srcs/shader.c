@@ -173,7 +173,7 @@ int			compileShader(GLuint shader, GLenum type, char *filename)
 
 void			update_shader_uniforms(t_env *env)
 {
-	glUniformMatrix4fv(env->shader.mvploc, 1, GL_FALSE, env->sim.mvp.m);
+	glUniformMatrix4fv(env->shader.mvploc, 1, GL_FALSE, env->live.mvp.m);
 	//glUniform1i(env->shader.smdloc, env->mod.shading);
 	//glUniform1i(env->shader.cmdloc, env->mod.color);
 	//glUniform1i(env->shader.gmdloc, env->mod.greyscale);

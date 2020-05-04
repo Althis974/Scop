@@ -48,8 +48,8 @@ int 		init(t_env *env)
 	if (SDLInit(env))
 		return (-1);
 	set_cam(env);
-	set_mat(&env->sim.model, ID);
-	set_mat(&env->sim.view, ID);
+	set_mat(&env->live.model, ID);
+	set_mat(&env->live.view, ID);
 	set_projection_matrix(env, FOV);
 	//set_mat(&env->obj.rotation, ID);
 	//set_mat(&env->obj.translation, ID);

@@ -79,13 +79,13 @@ typedef struct	s_shader
 	GLint	texloc;
 }				t_shader;
 
-typedef struct	s_sim
+typedef struct	s_live
 {
 	t_mat	model;
 	t_mat	view;
 	t_mat	projection;
 	t_mat	mvp;
-}				t_sim;
+}				t_live;
 
 typedef struct		s_cam
 {
@@ -123,7 +123,7 @@ typedef struct		s_env
 	t_shader 		shader;
 	t_cam 			cam;
 	t_obj			obj;
-	t_sim		sim;
+	t_live			live;
 }					t_env;
 
 // SDL

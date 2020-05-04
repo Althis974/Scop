@@ -37,7 +37,7 @@ void	camera_look_at_target(t_env *env)
 	view.m[12] = (float)-ft_vdot(&env->cam.right, &env->cam.ori);
 	view.m[13] = (float)-ft_vdot(&tmp, &env->cam.ori);
 	view.m[14] = (float)-ft_vdot(&env->cam.front, &env->cam.ori);
-	env->sim.view = view;
+	env->live.view = view;
 }
 
 void	compute_mvp_matrix(t_env *env)
@@ -45,9 +45,9 @@ void	compute_mvp_matrix(t_env *env)
 	t_mat tmp;
 	t_mat trans;
 
-	tmp = ft_matmul(&env->sim.view, &env->sim.projection);
-	trans = ft_matranspose(&env->sim.model);
-	env->sim.mvp = ft_matmul(&trans, &tmp);
+	tmp = ft_matmul(&env->live.view, &env->live.projection);
+	trans = ft_matranspose(&env->live.model);
+	env->live.mvp = ft_matmul(&trans, &tmp);
 }
 
 void	set_projection_matrix(t_env *env, float fov)
@@ -59,10 +59,10 @@ void	set_projection_matrix(t_env *env, float fov)
 	far = 100.0;
 	near = 0.001;
 	s = 1 / (tan(fov * 0.5 * M_PI / 180.0));
-	set_mat(&env->sim.projection, 0),
-	env->sim.projection.m[0] = s / ((float)WIN_W / (float)WIN_H);
-	env->sim.projection.m[5] = s;
-	env->sim.projection.m[10] = -(far + near) / (far - near);
-	env->sim.projection.m[11] = -1;
-	env->sim.projection.m[14] = -2 * far * near / (far - near);
+	set_mat(&env->live.projection, 0),
+	env->live.projection.m[0] = s / ((float)WIN_W / (float)WIN_H);
+	env->live.projection.m[5] = s;
+	env->live.projection.m[10] = -(far + near) / (far - near);
+	env->live.projection.m[11] = -1;
+	env->live.projection.m[14] = -2 * far * near / (far - near);
 }
