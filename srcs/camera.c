@@ -78,7 +78,7 @@ void	camera_move_inertia(t_env *env, double inertia/*, int mode*/)
 	env->cam.ori = ft_vadd(&env->cam.ori, &env->cam.inertia);
 	//if (mode == FREE)
 	//{
-		tmp = ft_vsub(&env->cam.ori, old);
+		tmp = ft_vsub(&env->cam.ori, &old);
 		env->cam.target = ft_vadd(&env->cam.target, &tmp);
 	//}
 }

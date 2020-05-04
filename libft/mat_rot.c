@@ -42,7 +42,7 @@ t_mat	mat_rot_axis(t_mat m, int axis, double angle)
 	t_mat	rot;
 	double	theta;
 
-	mat4_set(&rot, ID);
+	set_mat(&rot, ID);
 	theta = angle * (M_PI / 180);
 	if (axis == AXX)
 	{

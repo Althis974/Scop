@@ -28,5 +28,5 @@ t_vec	convec(double x, double y, double z)
 	v.y = y;
 	v.z = z;
 
-	return (vec);
+	return (v);
 }

@@ -25,6 +25,7 @@
 
 # define BUFF_SIZE 1000
 
+# define ID 0x6964
 # define AXX 0
 # define AXY 1
 # define AXZ 2

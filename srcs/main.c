@@ -19,7 +19,7 @@ void		set_cam(t_env *env)
 
 	v1 = (t_vec){0, 1, 0};
 	env->cam.ori = (t_vec){0, 0, 3};
-	env->cam.target = (t_vec){(0, 0, 0)};
+	env->cam.target = (t_vec){0, 0, 0};
 	env->cam.dir = ft_vsub(&env->cam.ori, &env->cam.target);
 	ft_vnorm(&env->cam.dir);
 	env->cam.right = ft_vcross(&v1, &env->cam.dir);

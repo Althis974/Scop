@@ -23,11 +23,11 @@ void	translate(t_mat *m, t_vec v)
 void	rotate(t_mat *m, t_vec v)
 {
 	if (v.x)
-		*m = mat_rot_axis(*m, AXIS_X, v.x);
+		*m = mat_rot_axis(*m, AXX, v.x);
 	if (v.y)
-		*m = mat_rot_axis(*m, AXIS_Y, v.y);
+		*m = mat_rot_axis(*m, AXY, v.y);
 	if (v.z)
-		*m = mat_rot_axis(*m, AXIS_Z, v.z);
+		*m = mat_rot_axis(*m, AXZ, v.z);
 }
 
 void	live_action(t_env *env, double inertia)
