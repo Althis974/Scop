@@ -25,6 +25,10 @@
 
 # define BUFF_SIZE 1000
 
+# define AXX 0
+# define AXY 1
+# define AXZ 2
+
 typedef	struct		s_list
 {
 	void			*content;
@@ -191,6 +195,9 @@ void				ft_vreg(t_vec *v, double a, double b);
 double				ft_vdot(t_vec *v1, t_vec *v2);
 double				ft_vlen(t_vec *v);
 double				ft_vdist(t_vec *v1, t_vec *v2);
+t_vec				convec(double x, double y, double z);
+void				vcpy(t_vec *v1, t_vec *v2);
+t_mat				mat_rot_axis(t_mat m, int axis, double angle);
 
 void	set_mat(t_mat *m, float f);
 t_mat	ft_matmul(t_mat *a, t_mat *b);
