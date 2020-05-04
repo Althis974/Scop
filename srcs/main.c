@@ -19,7 +19,7 @@ void		set_cam(t_env *env)
 
 	v1 = (t_vec){0, 1, 0};
 	env->cam.ori = (t_vec){0, 0, 3};
-	//env->cam.target = (t_vec){(0, 0, 0)};
+	env->cam.target = (t_vec){(0, 0, 0)};
 	env->cam.dir = ft_vsub(&env->cam.ori, &env->cam.target);
 	ft_vnorm(&env->cam.dir);
 	env->cam.right = ft_vcross(&v1, &env->cam.dir);
@@ -51,8 +51,8 @@ int 		init(t_env *env)
 	set_mat(&env->live.model, ID);
 	set_mat(&env->live.view, ID);
 	set_projection_matrix(env, FOV);
-	//set_mat(&env->obj.rotation, ID);
-	//set_mat(&env->obj.translation, ID);
+	set_mat(&env->obj.rotation, ID);
+	set_mat(&env->obj.translation, ID);
 	env->obj.f_len = 0;
 	env->obj.v_len = 0;
 	env->obj.inertia = (t_vec){0, 0, 0};
@@ -84,7 +84,11 @@ int			main(int ac, char **av)
 			glClearColor(0.09f, 0.08f, 0.15f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+			live_action(&env, 0.9);
+
 			camera_look_at_target(&env);
+
+			env.live.model = ft_matmul(&env.obj.translation, &env.obj.rotation);
 
 			glUseProgram(env.shader.program);
 

@@ -145,6 +145,8 @@ void			update_shader_uniforms(t_env *env);
 void	create_buffers(t_env *env);
 void	set_projection_matrix(t_env *env, float fov);
 void		parser(t_env *env);
+void	live_action(t_env *env, double inertia);
+void	camera_move_inertia(t_env *env, double inertia);
 
 void				error(const char *err);
 #endif //SCOP_SCOP_H
