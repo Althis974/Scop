@@ -43,6 +43,7 @@
 **	vao is a buffer of buffers
 **	vbo_v is for triangle points
 **	vbo_c is for triangle colors
+**	txt is for texture
 */
 
 typedef struct		s_sdl
@@ -53,7 +54,30 @@ typedef struct		s_sdl
 	GLuint			vao;
 	GLuint 			vbo_v;
 	GLuint			vbo_c;
+	GLuint			txt;
 }					t_sdl;
+
+/*
+**	[Texture structure]
+**
+**	*img is a pointer on image data
+**	size is the size of image
+**	w is the width
+**	h is the height
+**	row is the size of a row
+**	bpp is nb of BitsPerPixel
+*/
+
+typedef struct		s_txt
+{
+	unsigned char	*img;
+	int				size;
+	int				w;
+	int				h;
+	int				row;
+	short			bpp;
+}					t_txt;
+
 /*
 typedef struct		s_shader
 {
@@ -70,11 +94,11 @@ typedef struct	s_shader
 {
 	GLuint	program;
 	GLint	mvploc;
-	GLint	cmdloc;
-	GLint	smdloc;
+	//GLint	cmdloc;
+	//GLint	smdloc;
 	GLint	tmdloc;
-	GLint	gmdloc;
-	GLint	mmdloc;
+	//GLint	gmdloc;
+	//GLint	mmdloc;
 	GLint	texloc;
 }				t_shader;
 
@@ -111,7 +135,7 @@ typedef struct		s_obj
 	int				f_nb;
 	t_vec			sym_axis;
 	t_vec			inertia;
-	//t_texture		texture;
+	t_txt			txt;
 	double			velocity;
 	char			*filename;
 }					t_obj;
@@ -146,6 +170,8 @@ void	set_projection_matrix(t_env *env, float fov);
 void		parser(t_env *env);
 void	live_action(t_env *env, double inertia);
 void	camera_move_inertia(t_env *env, double inertia);
+void	create_texture(t_env *env);
+void	load_bmp(t_env *env, char *filename);
 
 void				error(const char *err);
 #endif //SCOP_SCOP_H

@@ -158,6 +158,7 @@ void	SDLExit(t_sdl scene)
 	SDL_DestroyWindow(scene.win);
 	SDL_Quit();
 }
+
 void	create_buffers(t_env *env)
 {
 	glGenBuffers(1, &env->sdl.vbo_v);
@@ -174,4 +175,5 @@ void	create_buffers(t_env *env)
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
 						  (GLvoid *) (3 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(1);
+	create_texture(env);
 }

@@ -178,7 +178,7 @@ void			update_shader_uniforms(t_env *env)
 	//glUniform1i(env->shader.cmdloc, env->mod.color);
 	//glUniform1i(env->shader.gmdloc, env->mod.greyscale);
 	//glUniform1i(env->shader.mmdloc, env->mod.mapping);
-	//glUniform1i(env->shader.tmdloc, env->mod.texture);
+	glUniform1i(env->shader.tmdloc, 1/*env->mod.texture*/);
 }
 
 const GLchar	*get_shader_source(char *filename)
@@ -248,8 +248,8 @@ void			build_shader_program(t_env *env)
 	env->shader.mvploc = glGetUniformLocation(env->shader.program, "mvp");
 	//env->shader.smdloc = glGetUniformLocation(env->shader.program, "smod");
 	//env->shader.cmdloc = glGetUniformLocation(env->shader.program, "cmod");
-	//env->shader.tmdloc = glGetUniformLocation(env->shader.program, "tmod");
+	env->shader.tmdloc = glGetUniformLocation(env->shader.program, "tmod");
 	//env->shader.gmdloc = glGetUniformLocation(env->shader.program, "gmod");
 	//env->shader.mmdloc = glGetUniformLocation(env->shader.program, "mmod");
-	//env->shader.texloc = glGetUniformLocation(env->shader.program, "ltexture");
+	env->shader.texloc = glGetUniformLocation(env->shader.program, "ltexture");
 }

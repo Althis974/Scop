@@ -70,6 +70,7 @@ int			main(int ac, char **av)
 		env.obj.filename = av[1];
 		init(&env);
 		parser(&env);
+		load_bmp(&env, "./resources/chaton.bmp");
 		build_shader_program(&env);
 		create_buffers(&env);
 		//glBindVertexArray(0);
@@ -95,6 +96,8 @@ int			main(int ac, char **av)
 			compute_mvp_matrix(&env);
 
 			update_shader_uniforms(&env);
+
+			glBindTexture(GL_TEXTURE_2D, env.sdl.txt);
 
 			glBindVertexArray(env.sdl.vao);
 			glDrawElements(GL_TRIANGLES, env.obj.f_nb, GL_UNSIGNED_INT, 0);
