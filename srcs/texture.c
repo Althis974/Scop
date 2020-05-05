@@ -59,12 +59,12 @@ void	get_image(t_txt *txt, char *buff, int i)
 		j = 0;
 		while (j < txt->row)
 		{
-			texture->img[k + j] = (unsigned char)buff[i + j + 2];
-			texture->img[k + j + 1] = (unsigned char)buff[i + j + 1];
-			texture->img[k + j + 2] = (unsigned char)buff[i + j];
+			txt->img[k + j] = (unsigned char)buff[i + j + 2];
+			txt->img[k + j + 1] = (unsigned char)buff[i + j + 1];
+			txt->img[k + j + 2] = (unsigned char)buff[i + j];
 			j += 3;
 		}
-		h += txt->row;
+		k += txt->row;
 	}
 }
 
