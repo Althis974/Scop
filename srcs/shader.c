@@ -178,7 +178,7 @@ void			update_shader_uniforms(t_env *env)
 	//glUniform1i(env->shader.cmdloc, env->mod.color);
 	//glUniform1i(env->shader.gmdloc, env->mod.greyscale);
 	//glUniform1i(env->shader.mmdloc, env->mod.mapping);
-	glUniform1i(env->shader.tmdloc, 1/*env->mod.texture*/);
+	glUniform1i(env->shader.tmdloc, env->event.txt);
 }
 
 const GLchar	*get_shader_source(char *filename)

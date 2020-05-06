@@ -58,6 +58,7 @@ int 		init(t_env *env)
 	env->obj.inertia = (t_vec){0, 0, 0};
 	env->obj.sym_axis = (t_vec){0, 0, 0};
 	env->obj.velocity = 0.33;
+	env->event.txt = 0;
 	return (0);
 }
 
@@ -79,11 +80,6 @@ int			main(int ac, char **av)
 		{
 			glClearColor(0.09f, 0.08f, 0.15f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-			// Event
-			//SDL_WaitEvent(&env.sdl.evnt);
-			//if (env.sdl.evnt.type == SDL_QUIT)
-			//	break;
 
 			if (!events(&env))
 				break;

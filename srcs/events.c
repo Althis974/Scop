@@ -20,5 +20,8 @@ int		events(t_env *env)
 	if (env->sdl.evnt.type == SDL_QUIT || env->sdl.evnt.key.keysym.scancode == ESC)
 		return (0);
 
+	if (env->sdl.evnt.key.keysym.scancode = T)
+		env->event.txt = 1;
+
 	return (1);
 }

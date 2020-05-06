@@ -103,6 +103,11 @@ typedef struct	s_shader
 	GLint	texloc;
 }				t_shader;
 
+typedef struct	s_event
+{
+	int			txt;
+}				t_event;
+
 typedef struct	s_live
 {
 	t_mat	model;
@@ -148,6 +153,7 @@ typedef struct		s_env
 	t_cam 			cam;
 	t_obj			obj;
 	t_live			live;
+	t_event			event;
 }					t_env;
 
 // SDL
