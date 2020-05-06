@@ -19,13 +19,13 @@ void	move_obj(t_env *env)
 
 	if (env->sdl.evnt.key.keysym.scancode == I)
 	{
-		tmp = convec(env->cam.front.v.x, 0, env->cam.front.v.z);
+		tmp = convec(env->cam.front.x, 0, env->cam.front.z);
 		tmp = ft_vmulx(&tmp, 0.01);
 		env->obj.inertia = ft_vsub(&env->obj.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == K)
 	{
-		tmp = convec(env->cam.front.v.x, 0, env->cam.front.v.z);
+		tmp = convec(env->cam.front.x, 0, env->cam.front.z);
 		tmp = ft_vmulx(&tmp, 0.01);
 		env->obj.inertia = ft_vadd(&env->obj.inertia, &tmp);
 	}
