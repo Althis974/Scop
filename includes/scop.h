@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include "keycode.h"
 #include "../libft/libft.h"
 #include <SDL2/SDL.h>
 
