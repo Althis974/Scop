@@ -17,7 +17,7 @@ LIB_DIR		=	./libft
 SDL2_DIR	=	/Users/rlossy/.brew/Cellar/sdl2/2.0.10/
 HEADER		=	./includes/
 FILENAMES	=	main.c sdl.c shader.c parser.c camera.c live.c texture.c
-#FILENAMES   +=
+FILENAMES   +=	events.c
 #FILENAMES   +=
 
 SOURCES		=	$(addprefix srcs/, $(FILENAMES))

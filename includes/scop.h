@@ -174,5 +174,6 @@ void	camera_move_inertia(t_env *env, double inertia);
 void	create_texture(t_env *env);
 void	load_bmp(t_env *env, char *filename);
 
+int 	events(t_env *env);
 void				error(const char *err);
 #endif //SCOP_SCOP_H

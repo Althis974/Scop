@@ -16,7 +16,7 @@
 int		events(t_env *env)
 {
 	// Event
-	SDL_PollEvent(env->sdl.evnt);
+	SDL_PollEvent(&env->sdl.evnt);
 	if (env->sdl.evnt.type == SDL_QUIT || env->sdl.evnt.key.keysym.scancode == ESC)
 		return (0);
 
