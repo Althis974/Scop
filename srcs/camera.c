@@ -67,12 +67,12 @@ void	set_projection_matrix(t_env *env, float fov)
 	env->live.projection.m[14] = -2 * far * near / (far - near);
 }
 
-void	camera_move_inertia(t_env *env, double inertia/*, int mode*/)
+void	camera_move_inertia(t_env *env/*, int mode*/)
 {
 	t_vec	old;
 	t_vec	tmp;
 
-	env->cam.inertia = ft_vmulx(&env->cam.inertia, inertia);
+	env->cam.inertia = ft_vmulx(&env->cam.inertia, INERTIA);
 	vcpy(&old, &env->cam.ori);
 
 	env->cam.ori = ft_vadd(&env->cam.ori, &env->cam.inertia);

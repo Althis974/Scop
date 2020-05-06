@@ -30,12 +30,12 @@ void	rotate(t_mat *m, t_vec v)
 		*m = mat_rot_axis(*m, AXZ, v.z);
 }
 
-void	live_action(t_env *env, double inertia)
+void	live_action(t_env *env)
 {
 	rotate(&env->obj.rotation, convec(0, env->obj.velocity, 0));
-	env->obj.inertia = ft_vmulx(&env->obj.inertia, inertia);
+	//env->obj.inertia = ft_vmulx(&env->obj.inertia, INERTIA);
 	translate(&env->obj.translation, env->obj.inertia);
 
-	camera_move_inertia(env, 0.93);
+	camera_move_inertia(env);
 	camera_look_at_target(env);
 }

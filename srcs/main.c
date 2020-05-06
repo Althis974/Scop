@@ -84,7 +84,7 @@ int			main(int ac, char **av)
 			if (!events(&env))
 				break;
 
-			live_action(&env, 0.9);
+			//live_action(&env);
 
 			camera_look_at_target(&env);
 
