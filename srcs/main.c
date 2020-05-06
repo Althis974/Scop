@@ -77,13 +77,16 @@ int			main(int ac, char **av)
 		//glEnable(GL_DEPTH_TEST);
 		while (1)
 		{
-			// Event
-			SDL_WaitEvent(&env.sdl.evnt);
-			if (env.sdl.evnt.type == SDL_QUIT)
-				break;
-
 			glClearColor(0.09f, 0.08f, 0.15f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+			// Event
+			//SDL_WaitEvent(&env.sdl.evnt);
+			//if (env.sdl.evnt.type == SDL_QUIT)
+			//	break;
+
+			if (!events(&env))
+				break;
 
 			live_action(&env, 0.9);
 
