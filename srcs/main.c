@@ -84,8 +84,6 @@ int			main(int ac, char **av)
 			if (!events(&env))
 				break;
 
-			//live_action(&env);
-
 			camera_look_at_target(&env);
 
 			env.live.model = ft_matmul(&env.obj.translation, &env.obj.rotation);

@@ -19,15 +19,13 @@ void	move_obj(t_env *env)
 
 	if (env->sdl.evnt.key.keysym.scancode == I)
 	{
-		tmp = convec(env->cam.front.x, 0, env->cam.front.z);
-		tmp = ft_vmulx(&tmp, 0.01);
-		env->obj.inertia = ft_vsub(&env->obj.inertia, &tmp);
+		tmp = ft_vmulx(&env->cam.up, 0.01);
+		env->obj.inertia = ft_vadd(&env->obj.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == K)
 	{
-		tmp = convec(env->cam.front.x, 0, env->cam.front.z);
-		tmp = ft_vmulx(&tmp, 0.01);
-		env->obj.inertia = ft_vadd(&env->obj.inertia, &tmp);
+		tmp = ft_vmulx(&env->cam.up, 0.01);
+		env->obj.inertia = ft_vsub(&env->obj.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == J)
 	{
@@ -41,13 +39,15 @@ void	move_obj(t_env *env)
 	}
 	if (env->sdl.evnt.key.keysym.scancode == U)
 	{
-		tmp = ft_vmulx(&env->cam.up, 0.01);
-		env->obj.inertia = ft_vadd(&env->obj.inertia, &tmp);
+		tmp = convec(env->cam.front.x, 0, env->cam.front.z);
+		tmp = ft_vmulx(&tmp, 0.01);
+		env->obj.inertia = ft_vsub(&env->obj.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == O)
 	{
-		tmp = ft_vmulx(&env->cam.up, 0.01);
-		env->obj.inertia = ft_vsub(&env->obj.inertia, &tmp);
+		tmp = convec(env->cam.front.x, 0, env->cam.front.z);
+		tmp = ft_vmulx(&tmp, 0.01);
+		env->obj.inertia = ft_vadd(&env->obj.inertia, &tmp);
 	}
 }
 
