@@ -57,33 +57,33 @@ void	move_cam(t_env *env)
 
 	if (env->sdl.evnt.key.keysym.scancode == Z)
 	{
-		tmp = ft_vmulx(&e->cam.front, &e->cam.velocity);
-		e->cam.inertia = ft_vsub(&e->cam.inertia, &tmp);
+		tmp = ft_vmulx(&env->cam.front, &env->cam.velocity);
+		env->cam.inertia = ft_vsub(&env->cam.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == S)
 	{
-		tmp = ft_vmulx(&e->cam.front, &e->cam.velocity);
-		e->cam.inertia = ft_vadd(&e->cam.inertia, &tmp);
+		tmp = ft_vmulx(&env->cam.front, &env->cam.velocity);
+		env->cam.inertia = ft_vadd(&env->cam.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == Q)
 	{
-		tmp = ft_vmulx(&e->cam.right, &e->cam.velocity);
-		e->cam.inertia = ft_vsub(&e->cam.inertia, &tmp);
+		tmp = ft_vmulx(&env->cam.right, &env->cam.velocity);
+		env->cam.inertia = ft_vsub(&env->cam.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == D)
 	{
-		tmp = ft_vmulx(&e->cam.right, &e->cam.velocity);
-		e->cam.inertia = ft_vadd(&e->cam.inertia, &tmp);
+		tmp = ft_vmulx(&env->cam.right, &env->cam.velocity);
+		env->cam.inertia = ft_vadd(&env->cam.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == A)
 	{
-		tmp = ft_vmulx(&e->cam.up, &e->cam.velocity);
-		e->cam.inertia = ft_vadd(&e->cam.inertia, &tmp);
+		tmp = ft_vmulx(&env->cam.up, &env->cam.velocity);
+		env->cam.inertia = ft_vadd(&env->cam.inertia, &tmp);
 	}
 	if (env->sdl.evnt.key.keysym.scancode == E)
 	{
-		tmp = ft_vmulx(&e->cam.up, &e->cam.velocity);
-		e->cam.inertia = ft_vsub(&e->cam.inertia, &tmp);
+		tmp = ft_vmulx(&env->cam.up, &env->cam.velocity);
+		env->cam.inertia = ft_vsub(&env->cam.inertia, &tmp);
 	}
 }
 
