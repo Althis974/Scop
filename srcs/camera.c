@@ -72,7 +72,7 @@ void	camera_move_inertia(t_env *env/*, int mode*/)
 	t_vec	old;
 	t_vec	tmp;
 
-	env->cam.inertia = ft_vmulx(&env->cam.inertia, INERTIA);
+	//env->cam.inertia = ft_vmulx(&env->cam.inertia, INERTIA);
 	vcpy(&old, &env->cam.ori);
 
 	env->cam.ori = ft_vadd(&env->cam.ori, &env->cam.inertia);

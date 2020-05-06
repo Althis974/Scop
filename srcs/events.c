@@ -51,6 +51,42 @@ void	move_obj(t_env *env)
 	}
 }
 
+void	move_cam(t_env *env)
+{
+	t_vec tmp;
+
+	if (env->sdl.evnt.key.keysym.scancode == Z)
+	{
+		tmp = ft_vmulx(&e->cam.front, &e->cam.velocity);
+		e->cam.inertia = ft_vsub(&e->cam.inertia, &tmp);
+	}
+	if (env->sdl.evnt.key.keysym.scancode == S)
+	{
+		tmp = ft_vmulx(&e->cam.front, &e->cam.velocity);
+		e->cam.inertia = ft_vadd(&e->cam.inertia, &tmp);
+	}
+	if (env->sdl.evnt.key.keysym.scancode == Q)
+	{
+		tmp = ft_vmulx(&e->cam.right, &e->cam.velocity);
+		e->cam.inertia = ft_vsub(&e->cam.inertia, &tmp);
+	}
+	if (env->sdl.evnt.key.keysym.scancode == D)
+	{
+		tmp = ft_vmulx(&e->cam.right, &e->cam.velocity);
+		e->cam.inertia = ft_vadd(&e->cam.inertia, &tmp);
+	}
+	if (env->sdl.evnt.key.keysym.scancode == A)
+	{
+		tmp = ft_vmulx(&e->cam.up, &e->cam.velocity);
+		e->cam.inertia = ft_vadd(&e->cam.inertia, &tmp);
+	}
+	if (env->sdl.evnt.key.keysym.scancode == E)
+	{
+		tmp = ft_vmulx(&e->cam.up, &e->cam.velocity);
+		e->cam.inertia = ft_vsub(&e->cam.inertia, &tmp);
+	}
+}
+
 int		events(t_env *env)
 {
 	// Event
@@ -59,12 +95,14 @@ int		events(t_env *env)
 		return (0);
 
 	env->obj.inertia = ft_vmulx(&env->obj.inertia, INERTIA);
+	env->cam.inertia = ft_vmulx(&env->cam.inertia, INERTIA);
 	if (env->sdl.evnt.type == SDL_KEYDOWN)
 	{
 		if (env->sdl.evnt.key.keysym.scancode == T)
 			env->event.txt = env->event.txt > 0 ? 0 : 1;
 
 		move_obj(env);
+		move_cam(env);
 	}
 	live_action(env);
 
