@@ -23,8 +23,8 @@ void	main()
 		col = texture(txt, txt_coor);
     if (gmod)
     {
-        grey = (0.2125 * color.x + 0.7154 * color.y + 0.0721 * color.z) / 3.0f;
-        color = vec4(grey, grey, grey, 1.0f);
+        grey = (0.2125 * col.x + 0.7154 * col.y + 0.0721 * col.z) / 3.0f;
+        col = vec4(grey, grey, grey, 1.0f);
     }
     grey = (0.2125 * col.x + 0.7154 * col.y + 0.0721 * col.z) / 3.0f;
     col = vec4(grey, grey, grey, 1.0f);
