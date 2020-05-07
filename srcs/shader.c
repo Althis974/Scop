@@ -251,5 +251,5 @@ void			build_shader_program(t_env *env)
 	env->shader.tmdloc = glGetUniformLocation(env->shader.program, "tmod");
 	//env->shader.gmdloc = glGetUniformLocation(env->shader.program, "gmod");
 	//env->shader.mmdloc = glGetUniformLocation(env->shader.program, "mmod");
-	env->shader.texloc = glGetUniformLocation(env->shader.program, "ltexture");
+	env->shader.texloc = glGetUniformLocation(env->shader.program, "txt");
 }

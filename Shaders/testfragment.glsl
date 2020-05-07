@@ -2,12 +2,12 @@
 
 flat in vec4		fragment_color_f;
 in vec4				fragment_color_s;
-in vec2				texture_coordinates;
+in vec2				txt_coor;
 
 uniform bool		smod;
 uniform bool		tmod;
 uniform bool		gmod;
-uniform sampler2D	ltexture;
+uniform sampler2D	txt;
 
 out vec4			col;
 
@@ -20,7 +20,7 @@ void	main()
 	else
 		col = fragment_color_f;
 	if (tmod)
-		col = texture(ltexture, texture_coordinates);
+		col = texture(txt, txt_coor);
 	if (gmod)
 	{
 		grey = (0.2125 * col.x + 0.7154 * col.y + 0.0721 * col.z) / 3.0f;
