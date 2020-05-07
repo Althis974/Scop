@@ -1,8 +1,8 @@
 #version 410 core
 
-layout (location = 0) in vec3 pos;
-
 # define PI 3.14159265359
+
+in vec3 pos;
 
 uniform mat4	mvp;
 uniform int		cmod;
