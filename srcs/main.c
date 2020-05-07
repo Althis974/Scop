@@ -71,7 +71,8 @@ int			main(int ac, char **av)
 		env.obj.filename = av[1];
 		init(&env);
 		parser(&env);
-		load_bmp(&env, "./resources/kitten.bmp");
+		//load_bmp(&env, "./resources/kitten.bmp");
+		load_bmp(&env, "./resources/kitten2.bmp");
 		//load_bmp(&env, "./resources/chaton.bmp");
 		build_shader_program(&env);
 		create_buffers(&env);
