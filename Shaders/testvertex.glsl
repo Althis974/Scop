@@ -1,14 +1,12 @@
 #version 410 core
 
-# define PI 3.14159265359
-
-in vec3 pos;
+in vec3 		pos;
 
 uniform mat4	mvp;
 uniform int		cmod;
 
 flat out vec4	fragment_color_f;
-smooth out vec4	fragment_color_s;
+out vec4		fragment_color_s;
 out	vec2		texture_coordinates;
 
 void	main()

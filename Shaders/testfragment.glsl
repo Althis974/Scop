@@ -1,7 +1,7 @@
 #version 410 core
 
 flat in vec4		fragment_color_f;
-smooth in vec4		fragment_color_s;
+in vec4				fragment_color_s;
 in vec2				texture_coordinates;
 
 uniform bool		smod;
@@ -9,7 +9,7 @@ uniform bool		tmod;
 uniform bool		gmod;
 uniform sampler2D	ltexture;
 
-out vec4		col;
+out vec4			col;
 
 void	main()
 {
