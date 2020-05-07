@@ -75,7 +75,6 @@ int			main(int ac, char **av)
 		//load_bmp(&env, "./resources/kitten.bmp");
 		load_bmp(&env, "./resources/kitten2.bmp");
 		//load_bmp(&env, "./resources/chaton.bmp");
-		build_shader_program(&env);
 		create_buffers(&env);
 		//glBindVertexArray(0);
 		//glEnable(GL_DEPTH_TEST);
