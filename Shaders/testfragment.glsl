@@ -1,29 +1,29 @@
 #version 410 core
 
-in vec4		fragment_color_f;
-in vec4		fragment_color_s;
-in vec2		texture_coordinates;
+flat in vec4		fragment_color_f;
+smooth in vec4		fragment_color_s;
+in vec2				texture_coordinates;
 
 uniform bool		smod;
 uniform bool		tmod;
 uniform bool		gmod;
 uniform sampler2D	ltexture;
 
-out vec4		color;
+out vec4		col;
 
 void	main()
 {
 	float	grey;
 
 	if (smod)
-		color = fragment_color_s;
+		col = fragment_color_s;
 	else
-		color = fragment_color_f;
+		col = fragment_color_f;
 	if (tmod)
-		color = texture(ltexture, texture_coordinates);
+		col = texture(ltexture, texture_coordinates);
 	if (gmod)
 	{
-		grey = (0.2125 * color.x + 0.7154 * color.y + 0.0721 * color.z) / 3.0f;
-		color = vec4(grey, grey, grey, 1.0f);
+		grey = (0.2125 * col.x + 0.7154 * col.y + 0.0721 * col.z) / 3.0f;
+		col = vec4(grey, grey, grey, 1.0f);
 	}
 }
