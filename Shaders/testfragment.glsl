@@ -15,15 +15,12 @@ void	main()
 {
 	float	grey;
 
+    grey = (0.2125 * col.x + 0.7154 * col.y + 0.0721 * col.z) / 3.0f;
+    col = vec4(grey, grey, grey, 1.0f);
 	if (smod)
 		col = fragment_color_s;
 	else
 		col = fragment_color_f;
 	if (apply)
 		col = texture(txt, txt_coor);
-	if (gmod)
-	{
-		grey = (0.2125 * col.x + 0.7154 * col.y + 0.0721 * col.z) / 3.0f;
-		col = vec4(grey, grey, grey, 1.0f);
-	}
 }
