@@ -14,7 +14,7 @@ void	main()
 	gl_Position = mvp * vec4(pos, 1.0f);
 	if (color == 0)
     {
-        fragment_color_s = vec4(pos.y * 0.2125 + 0.2125, pos.z * 0.7154 + pos.y * 0.0721 + 0.0721, 0.2f, 1.0f);
+        fragment_color_s = vec4(pos.x * 0.2125f, pos.y * 0.7154f, pos.z * 0.0721f, 1.0f);
     }
     if (color == 1)
 		fragment_color_s = vec4(pos * 0.4f + 0.4f, 1.0f);
