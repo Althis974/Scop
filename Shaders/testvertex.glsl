@@ -21,4 +21,5 @@ void	main()
 	if (cmod == 1)
 		fragment_color_s = vec4(position * 0.4f + 0.4f, 1.0f);
 	fragment_color_f = fragment_color_s;
+    texture_coordinates = vec2(position.x * 2, position.y * 2);
 }
