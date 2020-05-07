@@ -1,0 +1,24 @@
+#version 410 core
+
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 color;
+
+# define PI 3.14159265359
+
+uniform mat4	mvp;
+uniform int		cmod;
+
+out vec4	fragment_color_f;
+out vec4	fragment_color_s;
+out	vec2	texture_coordinates;
+
+void	main()
+{
+	gl_Position = mvp * vec4(position, 1.0f);
+	if (cmod == 0)
+		fragment_color_s = vec4(position.y * 0.4f + 0.4f,
+		position.z * 0.1 + position.y * 0.4f + 0.1f, 0.2f, 1.0f);
+	if (cmod == 1)
+		fragment_color_s = vec4(position * 0.4f + 0.4f, 1.0f);
+	fragment_color_f = fragment_color_s;
+}

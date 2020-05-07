@@ -242,8 +242,8 @@ void			build_shader_program(t_env *env)
 	GLuint	shader_vert;
 	GLuint	shader_frag;
 
-	shader_vert = create_shader("./Shaders/vertex.glsl", GL_VERTEX_SHADER);
-	shader_frag = create_shader("./Shaders/fragment.glsl", GL_FRAGMENT_SHADER);
+	shader_vert = create_shader("./Shaders/testvertex.glsl", GL_VERTEX_SHADER);
+	shader_frag = create_shader("./Shaders/testfragment.glsl", GL_FRAGMENT_SHADER);
 	env->shader.program = create_shader_program(shader_vert, shader_frag);
 	env->shader.mvploc = glGetUniformLocation(env->shader.program, "mvp");
 	//env->shader.smdloc = glGetUniformLocation(env->shader.program, "smod");
