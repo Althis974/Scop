@@ -19,7 +19,7 @@ void	main()
 		col = fragment_color_s;
 	else
 		col = fragment_color_f;
-	if (app)
+	if (apply)
 		col = texture(txt, txt_coor);
 	if (gmod)
 	{
