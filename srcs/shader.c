@@ -174,11 +174,11 @@ int			compileShader(GLuint shader, GLenum type, char *filename)
 void			update_shader_uniforms(t_env *env)
 {
 	glUniformMatrix4fv(env->shader.mvploc, 1, GL_FALSE, env->live.mvp.m);
+	glUniform1i(env->shader.apploc, env->event.txt);
+	glUniform1i(env->shader.colloc, env->event.col);
 	//glUniform1i(env->shader.smdloc, env->mod.shading);
-	//glUniform1i(env->shader.cmdloc, env->mod.color);
 	//glUniform1i(env->shader.gmdloc, env->mod.greyscale);
 	//glUniform1i(env->shader.mmdloc, env->mod.mapping);
-	glUniform1i(env->shader.tmdloc, env->event.txt);
 }
 
 const GLchar	*get_shader_source(char *filename)
@@ -246,10 +246,10 @@ void			build_shader_program(t_env *env)
 	shader_frag = create_shader("./Shaders/testfragment.glsl", GL_FRAGMENT_SHADER);
 	env->shader.program = create_shader_program(shader_vert, shader_frag);
 	env->shader.mvploc = glGetUniformLocation(env->shader.program, "mvp");
+	env->shader.apploc = glGetUniformLocation(env->shader.program, "apply");
+	env->shader.txtloc = glGetUniformLocation(env->shader.program, "txt");
+	env->shader.colloc = glGetUniformLocation(env->shader.program, "color");
 	//env->shader.smdloc = glGetUniformLocation(env->shader.program, "smod");
-	//env->shader.cmdloc = glGetUniformLocation(env->shader.program, "cmod");
-	env->shader.tmdloc = glGetUniformLocation(env->shader.program, "tmod");
 	//env->shader.gmdloc = glGetUniformLocation(env->shader.program, "gmod");
 	//env->shader.mmdloc = glGetUniformLocation(env->shader.program, "mmod");
-	env->shader.texloc = glGetUniformLocation(env->shader.program, "txt");
 }

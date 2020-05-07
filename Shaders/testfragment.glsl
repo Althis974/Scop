@@ -5,7 +5,7 @@ in vec4				fragment_color_s;
 in vec2				txt_coor;
 
 uniform bool		smod;
-uniform bool		tmod;
+uniform bool		apply;
 uniform bool		gmod;
 uniform sampler2D	txt;
 
@@ -19,7 +19,7 @@ void	main()
 		col = fragment_color_s;
 	else
 		col = fragment_color_f;
-	if (tmod)
+	if (app)
 		col = texture(txt, txt_coor);
 	if (gmod)
 	{

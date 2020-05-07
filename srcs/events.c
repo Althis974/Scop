@@ -89,7 +89,6 @@ void	move_cam(t_env *env)
 
 int		events(t_env *env)
 {
-	// Event
 	SDL_PollEvent(&env->sdl.evnt);
 	if (env->sdl.evnt.type == SDL_QUIT || env->sdl.evnt.key.keysym.scancode == ESC)
 		return (0);
@@ -100,6 +99,8 @@ int		events(t_env *env)
 	{
 		if (env->sdl.evnt.key.keysym.scancode == T)
 			env->event.txt = env->event.txt > 0 ? 0 : 1;
+		if (env->sdl.evnt.key.keysym.scancode == C)
+			env->event.col = env->event.col > 0 ? 0 : 1;
 
 		move_obj(env);
 		move_cam(env);

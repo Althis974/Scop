@@ -59,6 +59,7 @@ int 		init(t_env *env)
 	env->obj.sym_axis = (t_vec){0, 0, 0};
 	env->obj.velocity = 0.33;
 	env->event.txt = 0;
+	env->event.col = 0;
 	return (0);
 }
 
