@@ -87,6 +87,20 @@ void	move_cam(t_env *env)
 	}
 }
 
+void	apply_texture(t_env *env)
+{
+	env->event.txt = env->event.txt == 4 ? 0 : env->event.txt + 1;
+	if (env->event.txt == 1)
+		load_bmp(env, "./resources/kitten.bmp");
+	else if (env->event.txt == 2)
+		load_bmp(env, "./resources/fire.bmp");
+	else if (env->event.txt == 3)
+		load_bmp(env, "./resources/water.bmp");
+	else if (env->event.txt == 4)
+		load_bmp(env, "./resources/grass.bmp");
+	create_texture(env);
+}
+
 int		events(t_env *env)
 {
 	SDL_PollEvent(&env->sdl.evnt);
@@ -98,19 +112,11 @@ int		events(t_env *env)
 	if (env->sdl.evnt.type == SDL_KEYDOWN)
 	{
 		if (env->sdl.evnt.key.keysym.scancode == T)
-		{
-			env->event.txt = env->event.txt == 2 ? 0 : env->event.txt + 1;
-			if (env->event.txt == 1)
-				load_bmp(env, "./resources/kitten.bmp");
-			else if (env->event.txt == 2)
-				load_bmp(env, "./resources/fire.bmp");
-			create_texture(env);
-		}
+			apply_texture(env);
 		if (env->sdl.evnt.key.keysym.scancode == C)
 			env->event.col = env->event.col > 0 ? 0 : 1;
 		if (env->sdl.evnt.key.keysym.scancode == N)
 			env->event.itp = env->event.itp > 0 ? 0 : 1;
-
 		move_obj(env);
 		move_cam(env);
 	}
