@@ -48,14 +48,19 @@ void	get_image(t_txt *txt, char *buff, int i)
 {
 	int	j;
 	int	k;
+	int l;
 	int	size;
 
-	k = 0;
+	//k = 0;
+	k = txt->row;
+	l = i;
 	size = txt->size * 2;
 	txt->img = (unsigned char*)malloc(sizeof(unsigned char) * size);
-	while (i >= 0)
+	//while (i >= 0)
+	while (i < l)
 	{
-		i -= txt->row;
+		//i -= txt->row;
+		i += txt->row;
 		//j = 0;
 		j = txt->row - 1;
 		//while (j < txt->row)
@@ -70,7 +75,8 @@ void	get_image(t_txt *txt, char *buff, int i)
 			//txt->img[k + j + 2] = (unsigned char)buff[i + j];
 			//j += 3;
 		}
-		k += txt->row;
+		//k += txt->row;
+		k -= txt->row;
 	}
 }
 
