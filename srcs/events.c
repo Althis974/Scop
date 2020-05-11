@@ -98,7 +98,13 @@ int		events(t_env *env)
 	if (env->sdl.evnt.type == SDL_KEYDOWN)
 	{
 		if (env->sdl.evnt.key.keysym.scancode == T)
-			env->event.txt = env->event.txt > 0 ? 0 : 1;
+		{
+			env->event.txt = env->event.txt == 2 ? 0 : env->event.txt++;
+			if (env->event.txt == 1)
+				load_bmp(&env, "./resources/kitten.bmp");
+			else if (env->event.txt == 2)
+				load_bmp(&env, "./resources/fire.bmp");
+		}
 		if (env->sdl.evnt.key.keysym.scancode == C)
 			env->event.col = env->event.col > 0 ? 0 : 1;
 		if (env->sdl.evnt.key.keysym.scancode == N)
