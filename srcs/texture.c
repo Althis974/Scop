@@ -56,13 +56,19 @@ void	get_image(t_txt *txt, char *buff, int i)
 	while (i >= 0)
 	{
 		i -= txt->row;
-		j = 0;
-		while (j < txt->row)
+		//j = 0;
+		j = txt->row - 1;
+		//while (j < txt->row)
+		while (j >= 0)
 		{
-			txt->img[k + j] = (unsigned char)buff[i + j + 2];
-			txt->img[k + j + 1] = (unsigned char)buff[i + j + 1];
-			txt->img[k + j + 2] = (unsigned char)buff[i + j];
-			j += 3;
+			txt->img[k + j] = (unsigned char)buff[i + j - 2];
+			txt->img[k + j - 1] = (unsigned char)buff[i + j - 1];
+			txt->img[k + j - 2] = (unsigned char)buff[i + j];
+			j -= 3;
+			//txt->img[k + j] = (unsigned char)buff[i + j + 2];
+			//txt->img[k + j + 1] = (unsigned char)buff[i + j + 1];
+			//txt->img[k + j + 2] = (unsigned char)buff[i + j];
+			//j += 3;
 		}
 		k += txt->row;
 	}
