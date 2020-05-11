@@ -1,21 +1,21 @@
 #version 410 core
 
-flat in vec4		fragment_color_f;
-in vec4				fragment_color_s;
+flat in vec4		frag_flat;
+in vec4				frag_smooth;
 in vec2				txt_coor;
-
-uniform bool		smod;
-uniform bool		apply;
-uniform sampler2D	txt;
 
 out vec4			col;
 
-void	main()
+uniform bool		inter;
+uniform bool		apply;
+uniform sampler2D	txt;
+
+void				main()
 {
-	if (smod)
-		col = fragment_color_s;
+	if (inter)
+		col = frag_smooth;
 	else
-		col = fragment_color_f;
+		col = frag_flat;
 	if (apply)
 		col = texture(txt, txt_coor);
 }

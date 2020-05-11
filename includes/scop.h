@@ -99,15 +99,14 @@ typedef struct	s_shader
 	GLint	apploc;
 	GLint	txtloc;
 	GLint	colloc;
-	//GLint	smdloc;
-	//GLint	gmdloc;
-	//GLint	mmdloc;
+	GLint	itploc;
 }				t_shader;
 
 typedef struct	s_event
 {
 	int			txt;
 	int			col;
+	int			itp;
 }				t_event;
 
 typedef struct	s_live
