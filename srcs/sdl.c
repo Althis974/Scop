@@ -175,5 +175,4 @@ void	create_buffers(t_env *env)
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
 						  (GLvoid *) (3 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(1);
-	create_texture(env);
 }

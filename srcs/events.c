@@ -99,11 +99,12 @@ int		events(t_env *env)
 	{
 		if (env->sdl.evnt.key.keysym.scancode == T)
 		{
-			env->event.txt = env->event.txt == 2 ? 0 : env->event.txt++;
+			env->event.txt = env->event.txt == 2 ? 0 : env->event.txt + 1;
 			if (env->event.txt == 1)
-				load_bmp(&env, "./resources/kitten.bmp");
+				load_bmp(env, "./resources/kitten.bmp");
 			else if (env->event.txt == 2)
-				load_bmp(&env, "./resources/fire.bmp");
+				load_bmp(env, "./resources/fire.bmp");
+			create_texture(env);
 		}
 		if (env->sdl.evnt.key.keysym.scancode == C)
 			env->event.col = env->event.col > 0 ? 0 : 1;
