@@ -101,6 +101,8 @@ int		events(t_env *env)
 			env->event.txt = env->event.txt > 0 ? 0 : 1;
 		if (env->sdl.evnt.key.keysym.scancode == C)
 			env->event.col = env->event.col > 0 ? 0 : 1;
+		if (env->sdl.evnt.key.keysym.scancode == N)
+			env->event.col = env->event.col > 0 ? 0 : 1;
 
 		move_obj(env);
 		move_cam(env);

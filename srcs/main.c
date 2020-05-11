@@ -60,6 +60,7 @@ int 		init(t_env *env)
 	env->obj.velocity = 0.33;
 	env->event.txt = 0;
 	env->event.col = 0;
+	env->event.itp = 0;
 	return (0);
 }
 
@@ -75,6 +76,7 @@ int			main(int ac, char **av)
 		//load_bmp(&env, "./resources/kitten.bmp");
 		load_bmp(&env, "./resources/kitten2.bmp");
 		//load_bmp(&env, "./resources/chaton.bmp");
+		build_shader_program(&env);
 		create_buffers(&env);
 		//glBindVertexArray(0);
 		//glEnable(GL_DEPTH_TEST);
