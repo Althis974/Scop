@@ -15,7 +15,7 @@ void			main()
 
 	gl_Position = mvp * vec4(pos, 1.0f);
     if (color)
-        frag_smooth = vec4(pos * 0.97f + 0.4f, 1.0f);
+        frag_smooth = vec4(pos * 0.666f, 1.0f);
 	else
     {
         frag_smooth = vec4(pos * 0.4f + 0.4f, 1.0f);
