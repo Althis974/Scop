@@ -1,39 +1,27 @@
-#version 400 core
+#version 410 core
 
-layout (location = 0) in vec3 position;
-layout (location = 1) in vec3 color;
+in vec3 		pos;
 
-# define PI 3.14159265359
+flat out vec4	frag_flat;
+out vec4		frag_smooth;
+out	vec2		txt_coor;
 
 uniform mat4	mvp;
-uniform int		cmod;
-uniform bool	mmod;
+uniform bool	color;
 
-flat out vec4	fragment_color_f;
-smooth out vec4	fragment_color_s;
-out	vec2		texture_coordinates;
-
-vec2	cylinder_mapping()
+void			main()
 {
-	float	u;
-	float	v;
+    float 		grey;
 
-	u = 0.5 + atan(position.z, position.x) / PI * 0.5;
-	v = position.y / 10.0;
-	return (vec2(u, v) * 15);
-}
-
-void	main()
-{
-	gl_Position = mvp * vec4(position, 1.0f);
-	if (cmod == 0)
-		fragment_color_s = vec4(position.y * 0.4f + 0.4f,
-		position.z * 0.1 + position.y * 0.4f + 0.1f, 0.2f, 1.0f);
-	if (cmod == 1)
-		fragment_color_s = vec4(position * 0.4f + 0.4f, 1.0f);
-	fragment_color_f = fragment_color_s;
-	if (mmod)
-		texture_coordinates = cylinder_mapping();
+	gl_Position = mvp * vec4(pos, 1.0f);
+    if (color)
+        frag_smooth = vec4(pos * 0.666f, 1.0f);
 	else
-		texture_coordinates = vec2(position.x * 2, position.y * 2);
+    {
+        frag_smooth = vec4(pos * 0.4f + 0.4f, 1.0f);
+        grey = (0.2125 * frag_smooth.x + 0.7154 * frag_smooth.y + 0.0721 * frag_smooth.z) / 3.0f;
+        frag_smooth = vec4(grey, grey, grey, 1.0f);
+    }
+    frag_flat = frag_smooth;
+    txt_coor = vec2(pos.x * 2, pos.y * 2);
 }
