@@ -1,0 +1,744 @@
+newmtl Metallic_Varn0
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn0.jpg
+newmtl Metallic_Varn1
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn1_1.jpg
+newmtl Metallic_Varn2
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn2_2.jpg
+newmtl Diamond
+Ka 0 0 0
+Ns 34.4669
+Ks 1 1 1
+Kd 1 1 1
+map_Kd Diamond_3.jpg
+newmtl Metallic_Varn3
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn3_4.jpg
+newmtl Metallic_Varn4
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn4_5.jpg
+newmtl Metallic_Varn5
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn5_6.jpg
+newmtl Metallic_Varn6
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn6_7.jpg
+newmtl Metallic_Varn7
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn7_8.jpg
+newmtl Metallic_Varn8
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn8_9.jpg
+newmtl Metallic_Varn9
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn9_10.jpg
+newmtl Metallic_Varn10
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn10_11.jpg
+newmtl Metallic_Varn11
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn11_12.jpg
+newmtl Metallic_Varn12
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn12_13.jpg
+newmtl Metallic_Varn13
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn13_14.jpg
+newmtl Metallic_Varn14
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn14_15.jpg
+newmtl Metallic_Varn15
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn15_16.jpg
+newmtl Metallic_Varn16
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn16_17.jpg
+newmtl Metallic_Varn17
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn17_18.jpg
+newmtl Metallic_Varn18
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn18_19.jpg
+newmtl Metallic_Varn19
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn19_20.jpg
+newmtl Metallic_Varn20
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn20_21.jpg
+newmtl Metallic_Varn21
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn21_22.jpg
+newmtl Metallic_Varn22
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn22_23.jpg
+newmtl Metallic_Varn23
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn23_24.jpg
+newmtl Metallic_Varn24
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn24_25.jpg
+newmtl Metallic_Varn25
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn25_26.jpg
+newmtl Metallic_Varn26
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn26_27.jpg
+newmtl Metallic_Varn27
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn27_28.jpg
+newmtl Metallic_Varn28
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn28_29.jpg
+newmtl Metallic_Varn29
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn29_30.jpg
+newmtl Metallic_Varn30
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn30_31.jpg
+newmtl Metallic_Varn31
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn31_32.jpg
+newmtl Metallic_Varn32
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn32_33.jpg
+newmtl Metallic_Varn33
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn33_34.jpg
+newmtl Metallic_Varn34
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn34_35.jpg
+newmtl Metallic_Varn35
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn35_36.jpg
+newmtl Metallic_Varn36
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn36_37.jpg
+newmtl Metallic_Varn37
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn37_38.jpg
+newmtl Metallic_Varn38
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn38_39.jpg
+newmtl Metallic_Varn39
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn39_40.jpg
+newmtl Metallic_Varn40
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn40_41.jpg
+newmtl Metallic_Varn41
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn41_42.jpg
+newmtl Metallic_Varn42
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn42_43.jpg
+newmtl Metallic_Varn43
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn43_44.jpg
+newmtl Metallic_Varn44
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn44_45.jpg
+newmtl Metallic_Varn45
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn45_46.jpg
+newmtl Metallic_Varn46
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn46_47.jpg
+newmtl Metallic_Varn47
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn47_48.jpg
+newmtl Metallic_Varn48
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn48_49.jpg
+newmtl Metallic_Varn49
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn49_50.jpg
+newmtl Metallic_Varn50
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn50_51.jpg
+newmtl Metallic_Varn51
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn51_52.jpg
+newmtl Metallic_Varn52
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn52_53.jpg
+newmtl Metallic_Varn53
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn53_54.jpg
+newmtl Metallic_Varn54
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn54_55.jpg
+newmtl Metallic_Varn55
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn55_56.jpg
+newmtl Metallic_Varn56
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn56_57.jpg
+newmtl Metallic_Varn57
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn57_58.jpg
+newmtl Metallic_Varn58
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn58_59.jpg
+newmtl Metallic_Varn59
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn59_60.jpg
+newmtl Metallic_Varn60
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn60_61.jpg
+newmtl Metallic_Varn61
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn61_62.jpg
+newmtl Metallic_Varn62
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn62_63.jpg
+newmtl Metallic_Varn63
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn63_64.jpg
+newmtl Metallic_Varn64
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn64_65.jpg
+newmtl Metallic_Varn65
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn65_66.jpg
+newmtl Metallic_Varn66
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn66_67.jpg
+newmtl Metallic_Varn67
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn67_68.jpg
+newmtl Metallic_Varn68
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn68_69.jpg
+newmtl Metallic_Varn69
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn69_70.jpg
+newmtl Metallic_Varn70
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn70_71.jpg
+newmtl Metallic_Varn71
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn71_72.jpg
+newmtl Metallic_Varn72
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn72_73.jpg
+newmtl Metallic_Varn73
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn73_74.jpg
+newmtl Metallic_Varn74
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn74_75.jpg
+newmtl Metallic_Varn75
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn75_76.jpg
+newmtl Metallic_Varn76
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn76_77.jpg
+newmtl Metallic_Varn77
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn77_78.jpg
+newmtl Metallic_Varn78
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn78_79.jpg
+newmtl Metallic_Varn79
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn79_80.jpg
+newmtl Metallic_Varn80
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn80_81.jpg
+newmtl Metallic_Varn81
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn81_82.jpg
+newmtl Metallic_Varn82
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn82_83.jpg
+newmtl Metallic_Varn83
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn83_84.jpg
+newmtl Metallic_Varn84
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn84_85.jpg
+newmtl Metallic_Varn85
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn85_86.jpg
+newmtl Metallic_Varn86
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn86_87.jpg
+newmtl Metallic_Varn87
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn87_88.jpg
+newmtl Metallic_Varn88
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn88_89.jpg
+newmtl Metallic_Varn89
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn89_90.jpg
+newmtl Metallic_Varn90
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn90_91.jpg
+newmtl Metallic_Varn91
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn91_92.jpg
+newmtl Metallic_Varn92
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn92_93.jpg
+newmtl Metallic_Varn93
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn93_94.jpg
+newmtl Metallic_Varn94
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn94_95.jpg
+newmtl Metallic_Varn95
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn95_96.jpg
+newmtl Metallic_Varn96
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn96_97.jpg
+newmtl Metallic_Varn97
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn97_98.jpg
+newmtl Metallic_Varn98
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn98_99.jpg
+newmtl Metallic_Varn99
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn99_100.jpg
+newmtl Metallic_Varn100
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn100_101.jpg
+newmtl Metallic_Varn101
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn101_102.jpg
+newmtl Metallic_Varn102
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn102_103.jpg
+newmtl Metallic_Varn103
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn103_104.jpg
+newmtl Metallic_Varn104
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn104_105.jpg
+newmtl Metallic_Varn105
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn105_106.jpg
+newmtl Metallic_Varn106
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn106_107.jpg
+newmtl Metallic_Varn107
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn107_108.jpg
+newmtl Metallic_Varn108
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn108_109.jpg
+newmtl Metallic_Varn109
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn109_110.jpg
+newmtl Metallic_Varn110
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn110_111.jpg
+newmtl Metallic_Varn111
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn111_112.jpg
+newmtl Metallic_Varn112
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn112_113.jpg
+newmtl Metallic_Varn113
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn113_114.jpg
+newmtl Metallic_Varn114
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn114_115.jpg
+newmtl Metallic_Varn115
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn115_116.jpg
+newmtl Metallic_Varn116
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn116_117.jpg
+newmtl Metallic_Varn117
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn117_118.jpg
+newmtl Metallic_Varn118
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn118_119.jpg
+newmtl Metallic_Varn119
+Ka 0 0 0
+Ns 6.42374
+Ks 0.47451 0.85098 1
+Kd 0.215686 0.117647 0.0588235
+map_Kd Metallic_Varn119_120.jpg
+newmtl Metallic_Varn120
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn120_121.jpg
+newmtl Metallic_Varn121
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn121_122.jpg
+newmtl Metallic_Varn122
+Ka 0 0 0
+Ns 3.32012
+Ks 0.733333 0.92549 1
+Kd 0.72549 0.678431 0.552941
+map_Kd Metallic_Varn122_123.jpg
