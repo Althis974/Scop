@@ -156,7 +156,7 @@ void		parser(t_env *env)
 		ft_strdel(&line);
 	}
 
-	printf("vrtc = %f\n", (float)env->obj.vrtc);
+	printf("vrtc = %f\n", (float)*env->obj.vrtc);
 	printf("faces = %d\n", (int)env->obj.faces);
 
 	ft_strdel(&line);
