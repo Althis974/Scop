@@ -131,7 +131,7 @@ void	SDLRun(t_env *env)
 
 		camera_look_at_target(env);
 		compute_mvp_matrix(env);
-		update_shader_uniforms(env);
+		//update_shader_uniforms(env);
 		glBindVertexArray(env->sdl.vao);
 
 		// Display

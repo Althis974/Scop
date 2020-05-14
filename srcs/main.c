@@ -59,7 +59,7 @@ int 		init(t_env *env)
 	env->obj.sym_axis = (t_vec){0, 0, 0};
 	env->obj.velocity = 0.33;
 	env->shader.vrtxID = 0;
-	env->shader.frgmtID = 0;
+	env->shader.fragID = 0;
 	env->shader.prgmID = 0;
 	env->event.txt = 0;
 	env->event.col = 0;
