@@ -143,8 +143,8 @@ void		parser(t_env *env)
 	int		fd;
 	char	*line;
 
-	env->obj.vrtc = (GLfloat*)malloc(sizeof(GLfloat) * 3);
-	env->obj.faces = (GLuint*)malloc(sizeof(GLuint) * 3);
+	//env->obj.vrtc = (GLfloat*)malloc(sizeof(GLfloat) * 3);
+	//env->obj.faces = (GLuint*)malloc(sizeof(GLuint) * 3);
 	if ((fd = open(env->obj.filename, O_RDWR)) == -1)
 		error("Open failed.");
 	while (get_next_line(fd, &line))
@@ -165,5 +165,4 @@ void		parser(t_env *env)
 	env->obj.f_nb = env->obj.f_len;
 	find_sym_axis(env);
 	centralize(env);
-	printf("tamere\n");
 }
