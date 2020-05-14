@@ -80,42 +80,32 @@ typedef struct		s_txt
 	short			bpp;
 }					t_txt;
 
-/*
 typedef struct		s_shader
 {
 	GLuint			vrtxID;
-	GLuint			frgmtID;
+	GLuint			fragID;
 	GLuint			prgmID;
-	char			*vrtxScr;
-	char			*frgmtSrc;
-
+	GLint			mvploc;
+	GLint			apploc;
+	GLint			txtloc;
+	GLint			colloc;
+	GLint			itploc;
 }					t_shader;
-*/
 
-typedef struct	s_shader
+typedef struct		s_event
 {
-	GLuint	prgmID;
-	GLint	mvploc;
-	GLint	apploc;
-	GLint	txtloc;
-	GLint	colloc;
-	GLint	itploc;
-}				t_shader;
+	int				txt;
+	int				col;
+	int				itp;
+}					t_event;
 
-typedef struct	s_event
+typedef struct		s_live
 {
-	int			txt;
-	int			col;
-	int			itp;
-}				t_event;
-
-typedef struct	s_live
-{
-	t_mat	model;
-	t_mat	view;
-	t_mat	projection;
-	t_mat	mvp;
-}				t_live;
+	t_mat			model;
+	t_mat			view;
+	t_mat			projection;
+	t_mat			mvp;
+}					t_live;
 
 typedef struct		s_cam
 {

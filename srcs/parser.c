@@ -20,7 +20,7 @@ void		file_checker(char **tab, char c)
 	len = get_tab_len((void**)tab);
 
 	if ((c == 'v' && len != 3) || (c == 'f' && (len < 3 || len > 4)))
-		error("Wrong file.");
+		error("Erroneous data.");
 }
 
 GLfloat		*get_vertices(t_env *env, char *line)
@@ -138,7 +138,7 @@ void		parser(t_env *env)
 	char	*line;
 
 	if ((fd = open(env->obj.filename, O_RDWR)) == -1)
-		error("Open failed.");
+		error("Failed to open obj file.");
 	while (get_next_line(fd, &line))
 	{
 		if (line[0] == 'v' && line[1] == ' ')
@@ -149,7 +149,7 @@ void		parser(t_env *env)
 	}
 
 	if (!env->obj.vrtc || !env->obj.faces)
-		error("Wrong file.");
+		error("Erroneous data.");
 
 	ft_strdel(&line);
 	env->obj.v_size = env->obj.v_len * sizeof(GLfloat);

@@ -179,70 +179,65 @@ void			update_shader_uniforms(t_env *env)
 	glUniform1i(env->shader.itploc, env->event.itp);
 }
 
-const GLchar	*get_shader_source(char *filename)
+const GLchar	*get_src_shader(char *filename)
 {
 	int		fd;
 	int		ret;
-	char	buffer[BUFFER_SIZE];
-	char	*source;
-	char	*del;
+	char	buff[BUFFER_SIZE];
+	char	*src;
+	//char	*del;
 
-	source = ft_strnew(BUFFER_SIZE);
+	src = ft_strnew(BUFFER_SIZE);
 	if ((fd = open(filename, O_RDONLY)) == -1)
-		error("shader source file opening failed.");
+		error("Failed to open shader file.");
 	while ((ret = read(fd, buffer, BUFFER_SIZE)))
 	{
-		buffer[ret] = '\0';
-		del = source;
-		source = ft_strjoin(source, buffer, 0);
-		ft_strdel(&del);
+		buff[ret] = '\0';
+		//del = src;
+		source = ft_strjoin(src, buff, 1);
+		//ft_strdel(&del);
 	}
 	close(fd);
-	return (source);
+	return (src);
 }
 
 GLuint			create_shader(char *filename, int shader_type)
 {
-	GLint			success;
+	GLint			compile_err;
 	GLuint			shader;
-	const GLchar	*shader_source;
+	const GLchar	*src_shader;
 
-	shader_source = get_shader_source(filename);
+	src_shader = get_src_shader(filename);
 	shader = glCreateShader(shader_type);
-	glShaderSource(shader, 1, &shader_source, NULL);
+	glShaderSource(shader, 1, &src_shader, NULL);
 	glCompileShader(shader);
-	free((void*)shader_source);
+	free((void*)src_shader);
 	glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-	if (!success)
+	if (!compile_err)
 		error("shader compilation failed.");
 	return (shader);
 }
 
-GLuint			create_shader_program(GLuint shader_vert, GLuint shader_frag)
+void			create_shader_program(t_env *env)
 {
-	GLint	success;
-	GLuint	shader_program;
+	GLint	link_err;
 
-	shader_program = glCreateProgram();
-	glAttachShader(shader_program, shader_vert);
-	glAttachShader(shader_program, shader_frag);
-	glLinkProgram(shader_program);
-	glGetProgramiv(shader_program, GL_LINK_STATUS, &success);
-	if (!success)
+	env->shader.prgmID = glCreateProgram();
+	glAttachShader(env->shader.prgmID, env->shader.vrtxID);
+	glAttachShader(env->shader.prgmID, env->shader.fragID);
+	glLinkProgram(env->shader.prgmID);
+	glGetProgramiv(env->shader.prgmID, GL_LINK_STATUS, &link_err);
+	if (!link_err)
 		error("shader program compilation failed.");
-	glDeleteShader(shader_vert);
-	glDeleteShader(shader_frag);
-	return (shader_program);
+	glDeleteShader(env->shader.vrtxID);
+	glDeleteShader(env->shader.fragID);
 }
 
 void			build_shader_program(t_env *env)
 {
-	GLuint	shader_vert;
-	GLuint	shader_frag;
-
-	shader_vert = create_shader("./Shaders/vertex.glsl", GL_VERTEX_SHADER);
-	shader_frag = create_shader("./Shaders/fragment.glsl", GL_FRAGMENT_SHADER);
-	env->shader.prgmID = create_shader_program(shader_vert, shader_frag);
+	env->shader.vrtxID = create_shader("./Shaders/vertex.glsl", GL_VERTEX_SHADER);
+	env->shader.fragID = create_shader("./Shaders/fragment.glsl", GL_FRAGMENT_SHADER);
+	create_shader_program(env);
 	env->shader.mvploc = glGetUniformLocation(env->shader.prgmID, "mvp");
 	env->shader.apploc = glGetUniformLocation(env->shader.prgmID, "apply");
 	env->shader.txtloc = glGetUniformLocation(env->shader.prgmID, "txt");
