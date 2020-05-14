@@ -13,18 +13,16 @@
 
 #include "../includes/scop.h"
 
-int			file_checker(char **tab, char c)
+void		file_checker(char **tab, char c)
 {
 	int len;
 
 	len = get_tab_len((void**)tab);
 
-	if (c == 'v' && len != 3)
-		return (-1);
-	else if (c == 'f' && (len != 3 || len != 4))
-		return (-1);
+	if ((c == 'v' && len != 3) || (c == 'f' && (len < 3 && len > 4)))
+		error("Wrong file.");
 
-	return (0);
+
 }
 
 GLfloat		*get_vertices(t_env *env, char *line)
@@ -35,9 +33,9 @@ GLfloat		*get_vertices(t_env *env, char *line)
 
 	tab = ft_strsplit(&line[1], ' ');
 
-	i = -1;
-	while (tab[++i])
-		printf("tab[%d] = %s\n", i, tab[i]);
+	//i = -1;
+	//while (tab[++i])
+	//	printf("tab[%d] = %s\n", i, tab[i]);
 
 	env->obj.v_len += 6;
 	new = (GLfloat*)malloc(sizeof(GLfloat) * env->obj.v_len);
@@ -157,6 +155,10 @@ void		parser(t_env *env)
 			env->obj.faces = get_faces(env, line);
 		ft_strdel(&line);
 	}
+
+	printf("vrtc = %f\n", env->obj.vrtc);
+	printf("faces = %d\n", env->obj.faces);
+	
 	ft_strdel(&line);
 	env->obj.v_size = env->obj.v_len * sizeof(GLfloat);
 	env->obj.f_size = env->obj.f_len * sizeof(GLuint);
