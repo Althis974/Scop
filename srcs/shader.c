@@ -183,14 +183,14 @@ const GLchar	*get_src_shader(char *filename)
 {
 	int		fd;
 	int		ret;
-	char	buff[BUFFER_SIZE];
+	char	buff[BUFF_SIZE];
 	char	*src;
 	char	*tmp;
 
-	src = ft_strnew(BUFFER_SIZE);
+	src = ft_strnew(BUFF_SIZE);
 	if ((fd = open(filename, O_RDONLY)) == -1)
 		error("Failed to open shader file.");
-	while ((ret = read(fd, buff, BUFFER_SIZE)))
+	while ((ret = read(fd, buff, BUFF_SIZE)))
 	{
 		buff[ret] = '\0';
 		tmp = src;

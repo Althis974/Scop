@@ -33,7 +33,6 @@
 # define WIN_H 800
 # define WIN_NAME "Scop"
 # define FOV 90
-# define BUFFER_SIZE 128
 # define INERTIA 0.9
 
 /*
