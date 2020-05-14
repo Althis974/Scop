@@ -242,10 +242,10 @@ void			build_shader_program(t_env *env)
 
 	shader_vert = create_shader("./Shaders/vertex.glsl", GL_VERTEX_SHADER);
 	shader_frag = create_shader("./Shaders/fragment.glsl", GL_FRAGMENT_SHADER);
-	env->shader.program = create_shader_program(shader_vert, shader_frag);
-	env->shader.mvploc = glGetUniformLocation(env->shader.program, "mvp");
-	env->shader.apploc = glGetUniformLocation(env->shader.program, "apply");
-	env->shader.txtloc = glGetUniformLocation(env->shader.program, "txt");
-	env->shader.colloc = glGetUniformLocation(env->shader.program, "color");
-	env->shader.itploc = glGetUniformLocation(env->shader.program, "inter");
+	env->shader.prgmID = create_shader_program(shader_vert, shader_frag);
+	env->shader.mvploc = glGetUniformLocation(env->shader.prgmID, "mvp");
+	env->shader.apploc = glGetUniformLocation(env->shader.prgmID, "apply");
+	env->shader.txtloc = glGetUniformLocation(env->shader.prgmID, "txt");
+	env->shader.colloc = glGetUniformLocation(env->shader.prgmID, "color");
+	env->shader.itploc = glGetUniformLocation(env->shader.prgmID, "inter");
 }

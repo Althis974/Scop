@@ -90,7 +90,7 @@ int			main(int ac, char **av)
 
 			env.live.model = ft_matmul(&env.obj.translation, &env.obj.rotation);
 
-			glUseProgram(env.shader.program);
+			glUseProgram(env.shader.prgmID);
 
 			compute_mvp_matrix(&env);
 

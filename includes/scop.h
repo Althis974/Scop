@@ -94,7 +94,7 @@ typedef struct		s_shader
 
 typedef struct	s_shader
 {
-	GLuint	program;
+	GLuint	prgmID;
 	GLint	mvploc;
 	GLint	apploc;
 	GLint	txtloc;

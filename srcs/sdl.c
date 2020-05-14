@@ -116,7 +116,7 @@ void	SDLRun(t_env *env)
 
 	// Enable shader
 	//glUseProgram(env->shader.prgmID);
-	glUseProgram(env->shader.program);
+	glUseProgram(env->shader.prgmID);
 
 
 	while(1)
