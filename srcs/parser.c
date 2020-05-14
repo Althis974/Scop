@@ -21,6 +21,8 @@ int			file_checker(char **tab, char c)
 
 	if (c == 'v' && len != 3)
 		return (-1);
+	else if (c == 'f' && (len != 3 || len != 4))
+		return (-1);
 
 	return (0);
 }
@@ -35,7 +37,7 @@ GLfloat		*get_vertices(t_env *env, char *line)
 
 	i = -1;
 	while (tab[++i])
-		printf("tab[%d] = %s", i, tab[i]);
+		printf("tab[%d] = %s\n", i, tab[i]);
 
 	env->obj.v_len += 6;
 	new = (GLfloat*)malloc(sizeof(GLfloat) * env->obj.v_len);
@@ -65,6 +67,11 @@ GLuint		*get_faces(t_env *env, char *line)
 	GLuint	*new;
 
 	tab = ft_strsplit(&line[1], ' ');
+
+	//i = -1;
+	//while (tab[++i])
+	//	printf("tab[%d] = %s\n", i, tab[i]);
+
 	len = get_tab_len((void**)tab) == 4 ? 6 : 3;
 	env->obj.f_len += len;
 	new = (GLuint*)malloc(sizeof(GLuint) * env->obj.f_len);
