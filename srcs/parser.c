@@ -19,7 +19,7 @@ void		file_checker(char **tab, char c)
 
 	len = get_tab_len((void**)tab);
 
-	if ((c == 'v' && len != 3) || (c == 'f' && (len < 3 && len > 4)))
+	if ((c == 'v' && len != 3) || (c == 'f' && (len < 3 || len > 4)))
 		error("Wrong file.");
 }
 
