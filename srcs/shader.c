@@ -187,15 +187,20 @@ const GLchar	*get_src_shader(char *filename)
 	char	*src;
 	//char	*del;
 
-	src = ft_strnew(BUFFER_SIZE);
+	src = NULL;
+	//src = ft_strnew(BUFFER_SIZE);
 	if ((fd = open(filename, O_RDONLY)) == -1)
 		error("Failed to open shader file.");
 	while ((ret = read(fd, buff, BUFFER_SIZE)))
 	{
 		buff[ret] = '\0';
 		//del = src;
-		src = ft_strjoin(src, buff, 1);
+		//src = ft_strjoin(src, buff, 1);
 		//ft_strdel(&del);
+		if (src != NULL)
+			src = ft_strjoin(src, buff, 1);
+		else
+			src = ft_strdup(buff);
 	}
 	close(fd);
 	return (src);
