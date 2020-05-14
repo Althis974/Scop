@@ -190,11 +190,11 @@ const GLchar	*get_src_shader(char *filename)
 	src = ft_strnew(BUFFER_SIZE);
 	if ((fd = open(filename, O_RDONLY)) == -1)
 		error("Failed to open shader file.");
-	while ((ret = read(fd, buffer, BUFFER_SIZE)))
+	while ((ret = read(fd, buff, BUFFER_SIZE)))
 	{
 		buff[ret] = '\0';
 		//del = src;
-		source = ft_strjoin(src, buff, 1);
+		src = ft_strjoin(src, buff, 1);
 		//ft_strdel(&del);
 	}
 	close(fd);
@@ -212,7 +212,7 @@ GLuint			create_shader(char *filename, int shader_type)
 	glShaderSource(shader, 1, &src_shader, NULL);
 	glCompileShader(shader);
 	free((void*)src_shader);
-	glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+	glGetShaderiv(shader, GL_COMPILE_STATUS, &compile_err);
 	if (!compile_err)
 		error("shader compilation failed.");
 	return (shader);
