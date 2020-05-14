@@ -21,8 +21,6 @@ void		file_checker(char **tab, char c)
 
 	if ((c == 'v' && len != 3) || (c == 'f' && (len < 3 && len > 4)))
 		error("Wrong file.");
-
-
 }
 
 GLfloat		*get_vertices(t_env *env, char *line)
@@ -33,9 +31,7 @@ GLfloat		*get_vertices(t_env *env, char *line)
 
 	tab = ft_strsplit(&line[1], ' ');
 
-	//i = -1;
-	//while (tab[++i])
-	//	printf("tab[%d] = %s\n", i, tab[i]);
+	file_checker(tab, 'v');
 
 	env->obj.v_len += 6;
 	new = (GLfloat*)malloc(sizeof(GLfloat) * env->obj.v_len);
@@ -66,9 +62,7 @@ GLuint		*get_faces(t_env *env, char *line)
 
 	tab = ft_strsplit(&line[1], ' ');
 
-	//i = -1;
-	//while (tab[++i])
-	//	printf("tab[%d] = %s\n", i, tab[i]);
+	file_checker(tab, 'f');
 
 	len = get_tab_len((void**)tab) == 4 ? 6 : 3;
 	env->obj.f_len += len;
@@ -143,8 +137,6 @@ void		parser(t_env *env)
 	int		fd;
 	char	*line;
 
-	//env->obj.vrtc = (GLfloat*)malloc(sizeof(GLfloat) * 3);
-	//env->obj.faces = (GLuint*)malloc(sizeof(GLuint) * 3);
 	if ((fd = open(env->obj.filename, O_RDWR)) == -1)
 		error("Open failed.");
 	while (get_next_line(fd, &line))
@@ -158,9 +150,6 @@ void		parser(t_env *env)
 
 	if (!env->obj.vrtc || !env->obj.faces)
 		error("Wrong file.");
-
-	//printf("vrtc = %f\n", (float)*env->obj.vrtc);
-	//printf("faces = %d\n", (int)env->obj.faces);
 
 	ft_strdel(&line);
 	env->obj.v_size = env->obj.v_len * sizeof(GLfloat);
