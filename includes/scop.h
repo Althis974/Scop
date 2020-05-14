@@ -158,10 +158,10 @@ t_shader			initShader(char *vrtxScr, char *frgmtSrc);
 int					loadShader(t_shader *shader);
 int					compileShader(GLuint shader, GLenum type, char *filename);
 
-void			build_shader_program(t_env *env);
+void			load_shader(t_env *env);
 void	camera_look_at_target(t_env *env);
 void	compute_mvp_matrix(t_env *env);
-void			update_shader_uniforms(t_env *env);
+void			update_shaders(t_env *env);
 void	create_buffers(t_env *env);
 void	set_projection_matrix(t_env *env, float fov);
 void		parser(t_env *env);

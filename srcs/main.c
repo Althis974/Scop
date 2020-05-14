@@ -58,6 +58,9 @@ int 		init(t_env *env)
 	env->obj.inertia = (t_vec){0, 0, 0};
 	env->obj.sym_axis = (t_vec){0, 0, 0};
 	env->obj.velocity = 0.33;
+	env->shader.vrtxID = 0;
+	env->shader.frgmtID = 0;
+	env->shader.prgmID = 0;
 	env->event.txt = 0;
 	env->event.col = 0;
 	env->event.itp = 0;
@@ -74,7 +77,7 @@ int			main(int ac, char **av)
 		init(&env);
 		parser(&env);
 		//load_bmp(&env, "./resources/kitten.bmp");
-		build_shader_program(&env);
+		load_shader(&env);
 		create_buffers(&env);
 		//glBindVertexArray(0);
 		//glEnable(GL_DEPTH_TEST);
@@ -94,7 +97,7 @@ int			main(int ac, char **av)
 
 			compute_mvp_matrix(&env);
 
-			update_shader_uniforms(&env);
+			update_shaders(&env);
 
 			glBindTexture(GL_TEXTURE_2D, env.sdl.txt);
 
