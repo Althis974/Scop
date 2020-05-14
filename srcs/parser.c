@@ -13,6 +13,18 @@
 
 #include "../includes/scop.h"
 
+int			file_checker(char **tab, char c)
+{
+	int len;
+
+	len = get_tab_len((void**)tab);
+
+	if (c == 'v' && len != 3)
+		return (-1);
+
+	return (0);
+}
+
 GLfloat		*get_vertices(t_env *env, char *line)
 {
 	int		i;
@@ -20,6 +32,11 @@ GLfloat		*get_vertices(t_env *env, char *line)
 	GLfloat	*new;
 
 	tab = ft_strsplit(&line[1], ' ');
+
+	i = -1;
+	while (tab[++i])
+		printf("tab[%d] = %s", i, tab[i]);
+
 	env->obj.v_len += 6;
 	new = (GLfloat*)malloc(sizeof(GLfloat) * env->obj.v_len);
 	i = -1;
