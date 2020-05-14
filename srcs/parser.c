@@ -156,9 +156,9 @@ void		parser(t_env *env)
 		ft_strdel(&line);
 	}
 
-	printf("vrtc = %f\n", env->obj.vrtc);
-	printf("faces = %d\n", env->obj.faces);
-	
+	printf("vrtc = %f\n", (float)env->obj.vrtc);
+	printf("faces = %d\n", (int)env->obj.faces);
+
 	ft_strdel(&line);
 	env->obj.v_size = env->obj.v_len * sizeof(GLfloat);
 	env->obj.f_size = env->obj.f_len * sizeof(GLuint);
