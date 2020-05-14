@@ -165,4 +165,5 @@ void		parser(t_env *env)
 	env->obj.f_nb = env->obj.f_len;
 	find_sym_axis(env);
 	centralize(env);
+	printf("tamere\n");
 }
