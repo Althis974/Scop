@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
 void	ft_print_base_upp(uintmax_t n, uintmax_t base)

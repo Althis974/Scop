@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/scop.h"
 
 void	camera_look_at_target(t_env *env)

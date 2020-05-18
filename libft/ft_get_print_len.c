@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
 void	ft_get_print_len(uintmax_t n, uintmax_t base, size_t *len)

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
 size_t		ft_wcharnput(wchar_t const *s, size_t len, int print)
