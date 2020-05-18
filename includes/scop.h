@@ -6,7 +6,7 @@
 /*   By: rlossy <rlossy@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:08:13 by rlossy            #+#    #+#             */
-/*   Updated: 2020/05/18 10:08:13 by rlossy           ###   ########lyon.fr   */
+/*   Updated: 2020/05/18 11:58:09 by rlossy           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,7 +231,7 @@ void				update_shaders(t_env *env);
 void				set_cam(t_env *env);
 void				camera_look_at_target(t_env *env);
 void				compute_mvp_matrix(t_env *env);
-void				set_projection_matrix(t_env *env, float fov);
+void				set_projection_matrix(t_env *env);
 void				camera_move_inertia(t_env *env);
 
 /*

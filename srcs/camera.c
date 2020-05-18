@@ -6,7 +6,7 @@
 /*   By: rlossy <rlossy@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:08:13 by rlossy            #+#    #+#             */
-/*   Updated: 2020/05/18 10:08:13 by rlossy           ###   ########lyon.fr   */
+/*   Updated: 2020/05/18 11:58:09 by rlossy           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	compute_mvp_matrix(t_env *env)
 	env->live.mvp = ft_matmul(&trans, &tmp);
 }
 
-void	set_projection_matrix(t_env *env, float fov)
+void	set_projection_matrix(t_env *env)
 {
 	float	s;
 	float	far;
@@ -74,7 +74,7 @@ void	set_projection_matrix(t_env *env, float fov)
 
 	far = 100.0;
 	near = 0.001;
-	s = 1 / (tan(fov * 0.5 * M_PI / 180.0));
+	s = 1 / (tan(FOV * 0.5 * M_PI / 180.0));
 	set_mat(&env->live.projection, 0),
 	env->live.projection.m[0] = s / ((float)WIN_W / (float)WIN_H);
 	env->live.projection.m[5] = s;
