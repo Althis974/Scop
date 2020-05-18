@@ -65,7 +65,6 @@ typedef struct		s_sdl
 **	prgmID	=	program ID
 **	mvploc	=	ModelViewProjection location
 **	txtloc	=	textures location
-**	apploc	=	apply textures location
 **	colloc	=	color location
 **	itploc	=	interpolation location
 */
@@ -76,8 +75,7 @@ typedef struct		s_shader
 	GLuint			fragID;
 	GLuint			prgmID;
 	GLint			mvploc;
-	//GLint			txtloc;
-	GLint			apploc;
+	GLint			txtloc;
 	GLint			colloc;
 	GLint			itploc;
 }					t_shader;

@@ -8,7 +8,7 @@ out vec4			col;
 
 uniform bool		inter;
 uniform bool		apply;
-sampler2D			txt;
+uniform sampler2D	txt;
 
 void				main()
 {
