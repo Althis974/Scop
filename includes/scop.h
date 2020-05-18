@@ -202,18 +202,27 @@ typedef struct		s_env
 }					t_env;
 
 /*
-**	SDL
+**	SDL & OpenGL
 */
 
-int					SDLInit(t_env *env);
-void				SDLExit(t_sdl scene);
-void				create_buffers(t_env *env);
+int					sdl_init(t_env *env);
+void				sdl_exit(t_sdl scene);
+void				opengl_set_buffers(t_env *env);
+void				opengl_set_texture(t_env *env);
 
 /*
 **	Parsing
 */
 
 void				parser(t_env *env);
+
+/*
+**	Camera
+*/
+
+void				set_cam(t_env *env);
+void				set_view(t_env *env);
+void				camera_tracking(t_env *env);
 
 /*
 **	Shaders
@@ -223,19 +232,11 @@ void				load_shader(t_env *env);
 void				update_shaders(t_env *env);
 
 /*
-**	Camera
-*/
-
-void				set_cam(t_env *env);
-void				camera_look_at_target(t_env *env);
-void				compute_mvp_matrix(t_env *env);
-void				set_projection_matrix(t_env *env);
-void				camera_move_inertia(t_env *env);
-
-/*
 **	Live
 */
 
+void				set_projection(t_env *env);
+void				set_mvp(t_env *env);
 void				live_action(t_env *env);
 
 /*
@@ -248,8 +249,7 @@ int 				events(t_env *env);
 **	Textures
 */
 
-void				create_texture(t_env *env);
-void				load_bmp(t_env *env, char *filename);
+void				load_texture(t_env *env, char *filename);
 
 /*
 **	Utils
@@ -257,4 +257,4 @@ void				load_bmp(t_env *env, char *filename);
 
 void				error(const char *err);
 
-#endif //SCOP_SCOP_H
+#endif

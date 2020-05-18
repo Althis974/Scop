@@ -14,14 +14,14 @@
 
 void		set_cam(t_env *env)
 {
-	t_vec	v1;
+	t_vec	tmp;
 
-	v1 = (t_vec){0, 1, 0};
+	tmp = (t_vec){0, 1, 0};
 	env->cam.ori = (t_vec){0, 0, 3};
 	env->cam.tgt = (t_vec){0, 0, 0};
 	env->cam.dir = ft_vsub(&env->cam.ori, &env->cam.tgt);
 	ft_vnorm(&env->cam.dir);
-	env->cam.trvsal = ft_vcross(&v1, &env->cam.dir);
+	env->cam.trvsal = ft_vcross(&tmp, &env->cam.dir);
 	ft_vnorm(&env->cam.trvsal);
 	env->cam.lgtnal = ft_vcross(&env->cam.dir, &env->cam.trvsal);
 	env->cam.sgttal = ft_vcross(&env->cam.lgtnal, &env->cam.trvsal);
@@ -29,7 +29,7 @@ void		set_cam(t_env *env)
 	env->cam.velo = 0.005;
 }
 
-void	camera_look_at_target(t_env *env)
+void		set_view(t_env *env)
 {
 	t_vec	tmp;
 	t_mat	view;
@@ -56,42 +56,13 @@ void	camera_look_at_target(t_env *env)
 	env->live.view = view;
 }
 
-void	compute_mvp_matrix(t_env *env)
-{
-	t_mat tmp;
-	t_mat trans;
-
-	tmp = ft_matmul(&env->live.view, &env->live.projection);
-	trans = ft_matranspose(&env->live.model);
-	env->live.mvp = ft_matmul(&trans, &tmp);
-}
-
-void	set_projection_matrix(t_env *env)
-{
-	float	s;
-	float	far;
-	float	near;
-
-	far = 100.0;
-	near = 0.001;
-	s = 1 / (tan(FOV * 0.5 * M_PI / 180.0));
-	set_mat(&env->live.projection, 0),
-	env->live.projection.m[0] = s / ((float)WIN_W / (float)WIN_H);
-	env->live.projection.m[5] = s;
-	env->live.projection.m[10] = -(far + near) / (far - near);
-	env->live.projection.m[11] = -1;
-	env->live.projection.m[14] = -2 * far * near / (far - near);
-}
-
-void	camera_move_inertia(t_env *env)
+void		camera_tracking(t_env *env)
 {
 	t_vec	old;
 	t_vec	tmp;
 
 	vcpy(&old, &env->cam.ori);
-
 	env->cam.ori = ft_vadd(&env->cam.ori, &env->cam.iner);
-
 	tmp = ft_vsub(&env->cam.ori, &old);
 	env->cam.tgt = ft_vadd(&env->cam.tgt, &tmp);
 }

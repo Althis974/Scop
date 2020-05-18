@@ -12,6 +12,11 @@
 
 #include "../includes/scop.h"
 
+void		usage()
+{
+	write(2, "usage : ./scop <filename>\n", 26);
+}
+
 void		error(const char *err)
 {
 	write(2, "Error: ", 7);
@@ -20,19 +25,14 @@ void		error(const char *err)
 	exit(1);
 }
 
-void		usage()
-{
-	write(2, "usage : ./scop <filename>\n", 26);
-}
-
 int 		init(t_env *env)
 {
-	if (SDLInit(env))
+	if (sdl_init(env))
 		return (-1);
 	set_cam(env);
+	set_projection(env);
 	set_mat(&env->live.model, ID);
 	set_mat(&env->live.view, ID);
-	set_projection_matrix(env);
 	set_mat(&env->obj.rot, ID);
 	set_mat(&env->obj.trans, ID);
 	env->obj.f_len = 0;
@@ -59,7 +59,7 @@ int			main(int ac, char **av)
 		init(&env);
 		parser(&env);
 		load_shader(&env);
-		create_buffers(&env);
+		opengl_set_buffers(&env);
 		//glBindVertexArray(0);
 		//glEnable(GL_DEPTH_TEST);
 		while (1)
@@ -70,13 +70,13 @@ int			main(int ac, char **av)
 			if (!events(&env))
 				break;
 
-			camera_look_at_target(&env);
+			set_view(&env);
 
 			env.live.model = ft_matmul(&env.obj.trans, &env.obj.rot);
 
 			glUseProgram(env.shader.prgmID);
 
-			compute_mvp_matrix(&env);
+			set_mvp(&env);
 
 			update_shaders(&env);
 
@@ -87,7 +87,7 @@ int			main(int ac, char **av)
 			//glBindVertexArray(0);
 			SDL_GL_SwapWindow(env.sdl.win);
 		}
-		SDLExit(env.sdl);
+		sdl_exit(env.sdl);
 	}
 	else
 		usage();

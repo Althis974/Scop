@@ -12,26 +12,36 @@
 
 #include "../includes/scop.h"
 
-void	create_texture(t_env *env)
+void	get_image(t_txt *txt, char *buff, int len)
 {
-	glGenTextures(1, &env->sdl.txt);
-	glBindTexture(GL_TEXTURE_2D, env->sdl.txt);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, env->obj.txt.w, env->obj.txt.h, 0,
-			GL_RGB, GL_UNSIGNED_BYTE, env->obj.txt.img);
-	glGenerateMipmap(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, 0);
+	int	i;
+	int	j;
+	int	size;
+
+	j = 0;
+	size = txt->size * 2;
+	txt->img = (unsigned char*)malloc(sizeof(unsigned char) * size);
+	while (len >= 0)
+	{
+		len -= txt->row;
+		i = 0;
+		while (j < txt->row)
+		{
+			txt->img[j + i] = (unsigned char)buff[len + i + 2];
+			txt->img[j + i + 1] = (unsigned char)buff[len + i + 1];
+			txt->img[j + i + 2] = (unsigned char)buff[len + i];
+			i += 3;
+		}
+		j += txt->row;
+	}
 }
 
-void	read_header(char *filename, t_txt *txt)
+void	get_header(char *filename, t_txt *txt)
 {
 	FILE	*file;
 
 	if ((file = fopen(filename, "r")) == NULL)
-		error("bmp file opening (fopen) failed.");
+		error("Failed to open texture file.");
 	fseek(file, 18, SEEK_SET);
 	fread(&txt->w, 4, 1, file);
 	fread(&txt->h, 4, 1, file);
@@ -44,43 +54,19 @@ void	read_header(char *filename, t_txt *txt)
 	txt->size = txt->row * txt->h;
 }
 
-void	get_image(t_txt *txt, char *buff, int i)
+void	load_texture(t_env *env, char *filename)
 {
-	int	j;
-	int	k;
-	int	size;
-
-	k = 0;
-	size = txt->size * 2;
-	txt->img = (unsigned char*)malloc(sizeof(unsigned char) * size);
-	while (i >= 0)
-	{
-		i -= txt->row;
-		j = 0;
-		while (j < txt->row)
-		{
-			txt->img[k + j] = (unsigned char)buff[i + j + 2];
-			txt->img[k + j + 1] = (unsigned char)buff[i + j + 1];
-			txt->img[k + j + 2] = (unsigned char)buff[i + j];
-			j += 3;
-		}
-		k += txt->row;
-	}
-}
-
-void	load_bmp(t_env *env, char *filename)
-{
+	int		len;
 	int		fd;
-	int		i;
 	char	*buff;
 
-	read_header(filename, &env->obj.txt);
+	get_header(filename, &env->obj.txt);
 	buff = (char*)malloc(sizeof(char) * env->obj.txt.size + 1);
 	if ((fd = open(filename, O_RDWR)) == -1)
-		error("bmp file opening failed.");
+		error("Failed to open texture file.");
 	lseek(fd, 54, SEEK_SET);
-	i = read(fd, buff, env->obj.txt.size);
-	get_image(&env->obj.txt, buff, i);
+	len = read(fd, buff, env->obj.txt.size);
+	get_image(&env->obj.txt, buff, len);
 	ft_strdel((char**)&buff);
 	close(fd);
 }

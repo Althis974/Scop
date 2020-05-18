@@ -52,7 +52,7 @@ typedef struct		s_vec
 /*
 **	[Matrix structure]
 **
-**	m is a 4*4 matrix
+**	m	=	4*4 matrix
 */
 
 typedef struct		s_mat
@@ -199,8 +199,8 @@ t_vec				convec(double x, double y, double z);
 void				vcpy(t_vec *v1, t_vec *v2);
 t_mat				mat_rot_axis(t_mat m, int axis, double angle);
 
-void	set_mat(t_mat *m, float f);
-t_mat	ft_matmul(t_mat *a, t_mat *b);
-t_mat	ft_matranspose(t_mat *m);
+void				set_mat(t_mat *m, float f);
+t_mat				ft_matmul(t_mat *a, t_mat *b);
+t_mat				ft_matranspose(t_mat *m);
 
 #endif
