@@ -25,7 +25,7 @@ void	get_image(t_txt *txt, char *buff, int len)
 	{
 		len -= txt->row;
 		i = 0;
-		while (j < txt->row)
+		while (i < txt->row)
 		{
 			txt->img[j + i] = (unsigned char)buff[len + i + 2];
 			txt->img[j + i + 1] = (unsigned char)buff[len + i + 1];
