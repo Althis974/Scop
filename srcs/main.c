@@ -6,7 +6,7 @@
 /*   By: rlossy <rlossy@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:08:13 by rlossy            #+#    #+#             */
-/*   Updated: 2020/05/18 10:08:13 by rlossy           ###   ########lyon.fr   */
+/*   Updated: 2020/05/18 11:58:09 by rlossy           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int 		init(t_env *env)
 	set_cam(env);
 	set_mat(&env->live.model, ID);
 	set_mat(&env->live.view, ID);
-	set_projection_matrix(env, FOV);
+	set_projection_matrix(env);
 	set_mat(&env->obj.rot, ID);
 	set_mat(&env->obj.trans, ID);
 	env->obj.f_len = 0;
