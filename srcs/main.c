@@ -12,23 +12,6 @@
 
 #include "../includes/scop.h"
 
-void		set_cam(t_env *env)
-{
-	t_vec	v1;
-
-	v1 = (t_vec){0, 1, 0};
-	env->cam.ori = (t_vec){0, 0, 3};
-	env->cam.target = (t_vec){0, 0, 0};
-	env->cam.dir = ft_vsub(&env->cam.ori, &env->cam.target);
-	ft_vnorm(&env->cam.dir);
-	env->cam.right = ft_vcross(&v1, &env->cam.dir);
-	ft_vnorm(&env->cam.right);
-	env->cam.up = ft_vcross(&env->cam.dir, &env->cam.right);
-	env->cam.front = ft_vcross(&env->cam.up, &env->cam.right);
-	env->cam.inertia = (t_vec){0, 0, 0};
-	env->cam.velocity = 0.005;
-}
-
 void		error(const char *err)
 {
 	write(2, "Error: ", 7);
@@ -75,7 +58,6 @@ int			main(int ac, char **av)
 		env.obj.filename = av[1];
 		init(&env);
 		parser(&env);
-		//load_bmp(&env, "./resources/kitten.bmp");
 		load_shader(&env);
 		create_buffers(&env);
 		//glBindVertexArray(0);
