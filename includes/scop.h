@@ -76,7 +76,7 @@ typedef struct		s_shader
 	GLuint			fragID;
 	GLuint			prgmID;
 	GLint			mvploc;
-	GLint			txtloc;
+	//GLint			txtloc;
 	GLint			apploc;
 	GLint			colloc;
 	GLint			itploc;

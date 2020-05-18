@@ -75,7 +75,7 @@ void			load_shader(t_env *env)
 	create_program(env);
 	env->shader.mvploc = glGetUniformLocation(env->shader.prgmID, "mvp");
 	env->shader.apploc = glGetUniformLocation(env->shader.prgmID, "apply");
-	env->shader.txtloc = glGetUniformLocation(env->shader.prgmID, "txt");
+	//env->shader.txtloc = glGetUniformLocation(env->shader.prgmID, "txt");
 	env->shader.colloc = glGetUniformLocation(env->shader.prgmID, "color");
 	env->shader.itploc = glGetUniformLocation(env->shader.prgmID, "inter");
 }
