@@ -149,12 +149,12 @@ typedef struct		s_cam
 {
 	t_vec			ori;
 	t_vec			dir;
-	t_vec			target;
-	t_vec			right;
-	t_vec			up;
-	t_vec			front;
-	t_vec			inertia;
-	double			velocity;
+	t_vec			tgt;
+	t_vec			trvsal;
+	t_vec			lgtnal;
+	t_vec			sgttal;
+	t_vec			iner;
+	double			velo;
 }					t_cam;
 
 /*
@@ -185,12 +185,12 @@ typedef struct		s_obj
 	int				v_size;
 	int				f_size;
 	int				f_nb;
-	t_vec			sym_axis;
-	t_vec			inertia;
-	t_mat			translation;
-	t_mat			rotation;
+	t_vec			sym_ax;
+	t_vec			iner;
+	t_mat			trans;
+	t_mat			rot;
 	t_txt			txt;
-	double			velocity;
+	double			velo;
 }					t_obj;
 
 typedef struct		s_env

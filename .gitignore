@@ -32,3 +32,5 @@ build/
 # executable
 
 scop
+tags
+test.obj

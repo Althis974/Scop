@@ -105,8 +105,8 @@ void		find_sym_axis(t_env *env)
 		env->obj.vrtc[i + 2] < min.z ? min.z = env->obj.vrtc[i + 2] : 0;
 		i += 6;
 	}
-	env->obj.sym_axis = ft_vadd(&max, &min);
-	env->obj.sym_axis = ft_vmulx(&env->obj.sym_axis, 0.5);
+	env->obj.sym_ax = ft_vadd(&max, &min);
+	env->obj.sym_ax = ft_vmulx(&env->obj.sym_ax, 0.5);
 }
 
 void		centralize(t_env *env)
@@ -119,16 +119,16 @@ void		centralize(t_env *env)
 	o = 90 * (M_PI / 180);
 	while (i < env->obj.v_len)
 	{
-		env->obj.vrtc[i] -= env->obj.sym_axis.x;
-		env->obj.vrtc[i + 1] -= env->obj.sym_axis.y;
-		env->obj.vrtc[i + 2] -= env->obj.sym_axis.z;
+		env->obj.vrtc[i] -= env->obj.sym_ax.x;
+		env->obj.vrtc[i + 1] -= env->obj.sym_ax.y;
+		env->obj.vrtc[i + 2] -= env->obj.sym_ax.z;
 		tmp = env->obj.vrtc[i] * cos(o) - env->obj.vrtc[i + 2] * sin(o);
 		env->obj.vrtc[i + 2] = env->obj.vrtc[i] * sin(o) +
 				env->obj.vrtc[i + 2] * cos(o);
 		env->obj.vrtc[i] = tmp;
 		i += 6;
 	}
-	env->obj.sym_axis = (t_vec){0, 0, 0};
+	env->obj.sym_ax = (t_vec){0, 0, 0};
 }
 
 void		parser(t_env *env)

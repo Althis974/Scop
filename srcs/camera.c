@@ -18,15 +18,15 @@ void		set_cam(t_env *env)
 
 	v1 = (t_vec){0, 1, 0};
 	env->cam.ori = (t_vec){0, 0, 3};
-	env->cam.target = (t_vec){0, 0, 0};
-	env->cam.dir = ft_vsub(&env->cam.ori, &env->cam.target);
+	env->cam.tgt = (t_vec){0, 0, 0};
+	env->cam.dir = ft_vsub(&env->cam.ori, &env->cam.tgt);
 	ft_vnorm(&env->cam.dir);
-	env->cam.right = ft_vcross(&v1, &env->cam.dir);
-	ft_vnorm(&env->cam.right);
-	env->cam.up = ft_vcross(&env->cam.dir, &env->cam.right);
-	env->cam.front = ft_vcross(&env->cam.up, &env->cam.right);
-	env->cam.inertia = (t_vec){0, 0, 0};
-	env->cam.velocity = 0.005;
+	env->cam.trvsal = ft_vcross(&v1, &env->cam.dir);
+	ft_vnorm(&env->cam.trvsal);
+	env->cam.lgtnal = ft_vcross(&env->cam.dir, &env->cam.trvsal);
+	env->cam.sgttal = ft_vcross(&env->cam.lgtnal, &env->cam.trvsal);
+	env->cam.iner = (t_vec){0, 0, 0};
+	env->cam.velo = 0.005;
 }
 
 void	camera_look_at_target(t_env *env)
@@ -34,25 +34,25 @@ void	camera_look_at_target(t_env *env)
 	t_vec	tmp;
 	t_mat	view;
 
-	tmp = env->cam.up;
-	env->cam.front = ft_vsub(&env->cam.ori, &env->cam.target);
-	ft_vnorm(&env->cam.front);
-	env->cam.right = ft_vcross(&env->cam.up, &env->cam.front);
-	ft_vnorm(&env->cam.right);
-	tmp = ft_vcross(&env->cam.front, &env->cam.right);
+	tmp = env->cam.lgtnal;
+	env->cam.sgttal = ft_vsub(&env->cam.ori, &env->cam.tgt);
+	ft_vnorm(&env->cam.sgttal);
+	env->cam.trvsal = ft_vcross(&env->cam.lgtnal, &env->cam.sgttal);
+	ft_vnorm(&env->cam.trvsal);
+	tmp = ft_vcross(&env->cam.sgttal, &env->cam.trvsal);
 	set_mat(&view, ID);
-	view.m[0] = (float)env->cam.right.x;
+	view.m[0] = (float)env->cam.trvsal.x;
 	view.m[1] = (float)tmp.x;
-	view.m[2] = (float)env->cam.front.x;
-	view.m[4] = (float)env->cam.right.y;
+	view.m[2] = (float)env->cam.sgttal.x;
+	view.m[4] = (float)env->cam.trvsal.y;
 	view.m[5] = (float)tmp.y;
-	view.m[6] = (float)env->cam.front.y;
-	view.m[8] = (float)env->cam.right.z;
+	view.m[6] = (float)env->cam.sgttal.y;
+	view.m[8] = (float)env->cam.trvsal.z;
 	view.m[9] = (float)tmp.z;
-	view.m[10] = (float)env->cam.front.z;
-	view.m[12] = (float)-ft_vdot(&env->cam.right, &env->cam.ori);
+	view.m[10] = (float)env->cam.sgttal.z;
+	view.m[12] = (float)-ft_vdot(&env->cam.trvsal, &env->cam.ori);
 	view.m[13] = (float)-ft_vdot(&tmp, &env->cam.ori);
-	view.m[14] = (float)-ft_vdot(&env->cam.front, &env->cam.ori);
+	view.m[14] = (float)-ft_vdot(&env->cam.sgttal, &env->cam.ori);
 	env->live.view = view;
 }
 
@@ -90,8 +90,8 @@ void	camera_move_inertia(t_env *env)
 
 	vcpy(&old, &env->cam.ori);
 
-	env->cam.ori = ft_vadd(&env->cam.ori, &env->cam.inertia);
+	env->cam.ori = ft_vadd(&env->cam.ori, &env->cam.iner);
 
 	tmp = ft_vsub(&env->cam.ori, &old);
-	env->cam.target = ft_vadd(&env->cam.target, &tmp);
+	env->cam.tgt = ft_vadd(&env->cam.tgt, &tmp);
 }

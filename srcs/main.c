@@ -33,13 +33,13 @@ int 		init(t_env *env)
 	set_mat(&env->live.model, ID);
 	set_mat(&env->live.view, ID);
 	set_projection_matrix(env, FOV);
-	set_mat(&env->obj.rotation, ID);
-	set_mat(&env->obj.translation, ID);
+	set_mat(&env->obj.rot, ID);
+	set_mat(&env->obj.trans, ID);
 	env->obj.f_len = 0;
 	env->obj.v_len = 0;
-	env->obj.inertia = (t_vec){0, 0, 0};
-	env->obj.sym_axis = (t_vec){0, 0, 0};
-	env->obj.velocity = 0.33;
+	env->obj.iner = (t_vec){0, 0, 0};
+	env->obj.sym_ax = (t_vec){0, 0, 0};
+	env->obj.velo = 0.33;
 	env->shader.vrtxID = 0;
 	env->shader.fragID = 0;
 	env->shader.prgmID = 0;
@@ -72,7 +72,7 @@ int			main(int ac, char **av)
 
 			camera_look_at_target(&env);
 
-			env.live.model = ft_matmul(&env.obj.translation, &env.obj.rotation);
+			env.live.model = ft_matmul(&env.obj.trans, &env.obj.rot);
 
 			glUseProgram(env.shader.prgmID);
 

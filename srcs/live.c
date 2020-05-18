@@ -31,8 +31,8 @@ void	rotate(t_mat *m, t_vec v)
 
 void	live_action(t_env *env)
 {
-	rotate(&env->obj.rotation, convec(0, env->obj.velocity, 0));
-	translate(&env->obj.translation, env->obj.inertia);
+	rotate(&env->obj.rot, convec(0, env->obj.velo, 0));
+	translate(&env->obj.trans, env->obj.iner);
 	camera_move_inertia(env);
 	camera_look_at_target(env);
 }
