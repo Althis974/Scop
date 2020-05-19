@@ -60,4 +60,3 @@ t_mat	mat_rot_axis(t_mat m, int axis, double angle)
 	}
 	return (m);
 }
-
