@@ -14,9 +14,10 @@ void		error(const char *err)
 	exit(1);
 }
 
-char		**file_checker(char **tab, char *line, char c)
+char		**file_checker(char *line, char c)
 {
-	int len;
+	int 	len;
+	char	**tab;
 
 	tab = ft_strsplit(&line[1], ' ');
 
