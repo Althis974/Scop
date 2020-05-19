@@ -40,18 +40,18 @@ int			main_loop(t_env *env)
 {
 	glClearColor(0.09f, 0.08f, 0.15f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	if (!events(&env))
+	if (!events(env))
 		return (0);
-	set_view(&env);
-	env.live.model = ft_matmul(&env.obj.trans, &env.obj.rot);
-	glUseProgram(env.shader.prgmID);
-	set_mvp(&env);
-	update_shaders(&env);
-	glBindTexture(GL_TEXTURE_2D, env.sdl.txt);
-	glBindVertexArray(env.sdl.vao);
-	glDrawElements(GL_TRIANGLES, env.obj.f_nb, GL_UNSIGNED_INT, 0);
+	set_view(env);
+	env->live.model = ft_matmul(&env->obj.trans, &env->obj.rot);
+	glUseProgram(env->shader.prgmID);
+	set_mvp(env);
+	update_shaders(env);
+	glBindTexture(GL_TEXTURE_2D, env->sdl.txt);
+	glBindVertexArray(env->sdl.vao);
+	glDrawElements(GL_TRIANGLES, env->obj.f_nb, GL_UNSIGNED_INT, 0);
 	//glBindVertexArray(0);
-	SDL_GL_SwapWindow(env.sdl.win);
+	SDL_GL_SwapWindow(env->sdl.win);
 	return (1);
 }
 
@@ -70,7 +70,7 @@ int			main(int ac, char **av)
 		//glEnable(GL_DEPTH_TEST);
 		while (1)
 		{
-			if (!main_loop)
+			if (!main_loop(&env))
 				break;
 		}
 		sdl_exit(env.sdl);
