@@ -18,7 +18,7 @@ char		**file_checker(char **tab, char *line, char c)
 {
 	int len;
 
-	tab = ft_strsplit(&line, ' ');
+	tab = ft_strsplit(&line[1], ' ');
 
 	len = get_tab_len((void**)tab);
 
