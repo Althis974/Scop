@@ -12,50 +12,50 @@
 
 #include "libft.h"
 
-void	get_axx_mat_rot(t_mat *m, double theta)
+void	get_axx_mat_rot(t_mat *m, double o)
 {
-	m->m[5] = cos(theta);
-	m->m[6] = sin(theta);
-	m->m[9] = -sin(theta);
-	m->m[10] = cos(theta);
+	m->m[5] = cos(o);
+	m->m[6] = sin(o);
+	m->m[9] = -sin(o);
+	m->m[10] = cos(o);
 }
 
-void	get_axy_mat_rot(t_mat *m, double theta)
+void	get_axy_mat_rot(t_mat *m, double o)
 {
-	m->m[0] = cos(theta);
-	m->m[2] = -sin(theta);
-	m->m[8] = sin(theta);
-	m->m[10] = cos(theta);
+	m->m[0] = cos(o);
+	m->m[2] = -sin(o);
+	m->m[8] = sin(o);
+	m->m[10] = cos(o);
 }
 
-void	get_axz_mat_rot(t_mat *m, double theta)
+void	get_axz_mat_rot(t_mat *m, double o)
 {
-	m->m[0] = cos(theta);
-	m->m[1] = sin(theta);
-	m->m[4] = -sin(theta);
-	m->m[5] = cos(theta);
+	m->m[0] = cos(o);
+	m->m[1] = sin(o);
+	m->m[4] = -sin(o);
+	m->m[5] = cos(o);
 }
 
 t_mat	mat_rot_axis(t_mat m, int axis, double angle)
 {
 	t_mat	rot;
-	double	theta;
+	double	o;
 
 	set_mat(&rot, ID);
-	theta = angle * (M_PI / 180);
+	o = angle * (M_PI / 180);
 	if (axis == AXX)
 	{
-		get_axx_mat_rot(&rot, theta);
+		get_axx_mat_rot(&rot, o);
 		m = ft_matmul(&m, &rot);
 	}
 	else if (axis == AXY)
 	{
-		get_axy_mat_rot(&rot, theta);
+		get_axy_mat_rot(&rot, o);
 		m = ft_matmul(&m, &rot);
 	}
 	else if (axis == AXZ)
 	{
-		get_axz_mat_rot(&rot, theta);
+		get_axz_mat_rot(&rot, o);
 		m = ft_matmul(&m, &rot);
 	}
 	return (m);

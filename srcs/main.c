@@ -12,19 +12,6 @@
 
 #include "../includes/scop.h"
 
-void		usage()
-{
-	write(2, "usage : ./scop <filename>\n", 26);
-}
-
-void		error(const char *err)
-{
-	write(2, "Error: ", 7);
-	ft_putstr_fd(err, 2);
-	write(2, "\n", 1);
-	exit(1);
-}
-
 int 		init(t_env *env)
 {
 	if (sdl_init(env))
@@ -49,6 +36,25 @@ int 		init(t_env *env)
 	return (0);
 }
 
+int			main_loop(t_env *env)
+{
+	glClearColor(0.09f, 0.08f, 0.15f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	if (!events(&env))
+		return (0);
+	set_view(&env);
+	env.live.model = ft_matmul(&env.obj.trans, &env.obj.rot);
+	glUseProgram(env.shader.prgmID);
+	set_mvp(&env);
+	update_shaders(&env);
+	glBindTexture(GL_TEXTURE_2D, env.sdl.txt);
+	glBindVertexArray(env.sdl.vao);
+	glDrawElements(GL_TRIANGLES, env.obj.f_nb, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
+	SDL_GL_SwapWindow(env.sdl.win);
+	return (1);
+}
+
 int			main(int ac, char **av)
 {
 	t_env	env;
@@ -60,37 +66,16 @@ int			main(int ac, char **av)
 		parser(&env);
 		load_shader(&env);
 		opengl_set_buffers(&env);
-		//glBindVertexArray(0);
-		//glEnable(GL_DEPTH_TEST);
+		glBindVertexArray(0);
+		glEnable(GL_DEPTH_TEST);
 		while (1)
 		{
-			glClearColor(0.09f, 0.08f, 0.15f, 1.0f);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-			if (!events(&env))
+			if (!main_loop)
 				break;
-
-			set_view(&env);
-
-			env.live.model = ft_matmul(&env.obj.trans, &env.obj.rot);
-
-			glUseProgram(env.shader.prgmID);
-
-			set_mvp(&env);
-
-			update_shaders(&env);
-
-			glBindTexture(GL_TEXTURE_2D, env.sdl.txt);
-
-			glBindVertexArray(env.sdl.vao);
-			glDrawElements(GL_TRIANGLES, env.obj.f_nb, GL_UNSIGNED_INT, 0);
-			//glBindVertexArray(0);
-			SDL_GL_SwapWindow(env.sdl.win);
 		}
 		sdl_exit(env.sdl);
 	}
 	else
 		usage();
-
 	return (0);
 }

@@ -12,26 +12,14 @@
 
 #include "../includes/scop.h"
 
-void		file_checker(char **tab, char c)
-{
-	int len;
-
-	len = get_tab_len((void**)tab);
-
-	if ((c == 'v' && len != 3) || (c == 'f' && (len < 3 || len > 4)))
-		error("Erroneous data.");
-}
-
 GLfloat		*get_vertices(t_env *env, char *line)
 {
 	int		i;
 	char	**tab;
 	GLfloat	*new;
 
-	tab = ft_strsplit(&line[1], ' ');
-
-	file_checker(tab, 'v');
-
+	//tab = ft_strsplit(&line[1], ' ');
+	tab = file_checker(tab, line[1], 'v');
 	env->obj.v_len += 6;
 	new = (GLfloat*)malloc(sizeof(GLfloat) * env->obj.v_len);
 	i = -1;
@@ -59,10 +47,8 @@ GLuint		*get_faces(t_env *env, char *line)
 	char	**tab;
 	GLuint	*new;
 
-	tab = ft_strsplit(&line[1], ' ');
-
-	file_checker(tab, 'f');
-
+	//tab = ft_strsplit(&line[1], ' ');
+	tab = file_checker(tab, line[1], 'f');
 	len = get_tab_len((void**)tab) == 4 ? 6 : 3;
 	env->obj.f_len += len;
 	new = (GLuint*)malloc(sizeof(GLuint) * env->obj.f_len);
@@ -146,10 +132,8 @@ void		parser(t_env *env)
 			env->obj.faces = get_faces(env, line);
 		ft_strdel(&line);
 	}
-
 	if (!env->obj.vrtc || !env->obj.faces)
 		error("Erroneous data.");
-
 	ft_strdel(&line);
 	env->obj.v_size = env->obj.v_len * sizeof(GLfloat);
 	env->obj.f_size = env->obj.f_len * sizeof(GLuint);

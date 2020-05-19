@@ -215,6 +215,7 @@ void				opengl_set_texture(t_env *env);
 */
 
 void				parser(t_env *env);
+char				**file_checker(char **tab, char *line, char c);
 
 /*
 **	Camera
@@ -255,6 +256,7 @@ void				load_texture(t_env *env, char *filename);
 **	Utils
 */
 
+void				usage();
 void				error(const char *err);
 
 #endif
