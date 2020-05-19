@@ -50,7 +50,7 @@ int			main_loop(t_env *env)
 	glBindTexture(GL_TEXTURE_2D, env.sdl.txt);
 	glBindVertexArray(env.sdl.vao);
 	glDrawElements(GL_TRIANGLES, env.obj.f_nb, GL_UNSIGNED_INT, 0);
-	glBindVertexArray(0);
+	//glBindVertexArray(0);
 	SDL_GL_SwapWindow(env.sdl.win);
 	return (1);
 }
@@ -66,8 +66,8 @@ int			main(int ac, char **av)
 		parser(&env);
 		load_shader(&env);
 		opengl_set_buffers(&env);
-		glBindVertexArray(0);
-		glEnable(GL_DEPTH_TEST);
+		//glBindVertexArray(0);
+		//glEnable(GL_DEPTH_TEST);
 		while (1)
 		{
 			if (!main_loop)
