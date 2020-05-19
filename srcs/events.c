@@ -90,13 +90,13 @@ void	apply_texture(t_env *env)
 {
 	env->event.txt = env->event.txt == 4 ? 0 : env->event.txt + 1;
 	if (env->event.txt == 1)
-		load_texture(env, "./resources/kitten.bmp");
+		load_texture(env, "./textures/kitten.bmp");
 	else if (env->event.txt == 2)
-		load_texture(env, "./resources/fire.bmp");
+		load_texture(env, "./textures/fire.bmp");
 	else if (env->event.txt == 3)
-		load_texture(env, "./resources/water.bmp");
+		load_texture(env, "./textures/water.bmp");
 	else if (env->event.txt == 4)
-		load_texture(env, "./resources/grass.bmp");
+		load_texture(env, "./textures/grass.bmp");
 	opengl_set_texture(env);
 }
 
