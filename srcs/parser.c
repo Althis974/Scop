@@ -19,7 +19,7 @@ GLfloat		*get_vertices(t_env *env, char *line)
 	GLfloat	*new;
 
 	//tab = ft_strsplit(&line[1], ' ');
-	tab = file_checker(tab, line[1], 'v');
+	tab = file_checker(tab, line, 'v');
 	env->obj.v_len += 6;
 	new = (GLfloat*)malloc(sizeof(GLfloat) * env->obj.v_len);
 	i = -1;
@@ -48,7 +48,7 @@ GLuint		*get_faces(t_env *env, char *line)
 	GLuint	*new;
 
 	//tab = ft_strsplit(&line[1], ' ');
-	tab = file_checker(tab, line[1], 'f');
+	tab = file_checker(tab, line, 'f');
 	len = get_tab_len((void**)tab) == 4 ? 6 : 3;
 	env->obj.f_len += len;
 	new = (GLuint*)malloc(sizeof(GLuint) * env->obj.f_len);
