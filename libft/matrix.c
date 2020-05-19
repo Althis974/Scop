@@ -11,108 +11,55 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-void	set_matid(t_mat *m, int order)
-{
-	int i;
-	int j;
 
-	i = -1;
-	while (++i < order)
-	{
-		j = -1;
-		while (++j < order)
-			m->m[i][j] = j % order == 0 ? 1 : 0;
-	}
-}*/
-
-void	set_mat(t_mat *m, float f)
+void	set_mat(t_mat *a, float f)
 {
 	int		i;
 
 	i = -1;
 	while (++i < 16)
 	{
-		if (f == 0x6964)
-			m->m[i] = (i % 5 == 0 ? 1 : 0);
+		if (f == ID)
+			a->m[i] = (i % 5 == 0 ? 1 : 0);
 		else
-			m->m[i] = f;
+			a->m[i] = f;
 	}
 }
 
-/*
 t_mat	ft_matmul(t_mat *a, t_mat *b)
 {
-	int		h;
-	int		w;
-	int		z;
+	int		i;
+	int		j;
+	int		k;
 	t_mat	m;
 
-	h = -1;
-	while (++h < 4)
+	i = -1;
+	while (++i < 4)
 	{
-		w = -1;
-		while (++w < 4)
+		j = -1;
+		while (++j < 4)
 		{
-			m.m[h][w] = 0;
-			z = -1;
-			while (++z < 4)
-				m.m[h][w] += a->m[h][z] * b->m[z][w];
-		}
-	}
-	return (m);
-}*/
-
-t_mat	ft_matmul(t_mat *a, t_mat *b)
-{
-	int		h;
-	int		w;
-	int		z;
-	t_mat	m;
-
-	h = -1;
-	while (++h < 4)
-	{
-		w = -1;
-		while (++w < 4)
-		{
-			z = -1;
-			m.m[h * 4 + w] = 0;
-			while (++z < 4)
-				m.m[h * 4 + w] += a->m[h * 4 + z] * b->m[z * 4 + w];
+			k = -1;
+			m.m[i * 4 + j] = 0;
+			while (++k < 4)
+				m.m[i * 4 + j] += a->m[i * 4 + k] * b->m[k * 4 + j];
 		}
 	}
 	return (m);
 }
-/*
-t_mat	ft_matranspose(t_mat *m)
+
+t_mat	ft_matranspose(t_mat *a)
 {
-	int		h;
-	int		w;
-	t_mat	t;
+	int		i;
+	int		j;
+	t_mat	m;
 
-	h = -1;
-	while (++h < 4)
+	i = -1;
+	while (++i < 4)
 	{
-		w = -1;
-		while (++w < 4)
-			t.m[w][h] = m->m[h][w];
+		j = -1;
+		while (++j < 4)
+			m.m[j * 4 + i] = a->m[i * 4 + j];
 	}
-	return (t);
-}*/
-
-t_mat	ft_matranspose(t_mat *m)
-{
-	int		h;
-	int		w;
-	t_mat	t;
-
-	h = -1;
-	while (++h < 4)
-	{
-		w = -1;
-		while (++w < 4)
-			t.m[w * 4 + h] = m->m[h * 4 + w];
-	}
-	return (t);
+	return (m);
 }

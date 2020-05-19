@@ -58,7 +58,6 @@ t_mat	mat_rot_axis(t_mat m, int axis, double angle)
 		get_axz_mat_rot(&rot, theta);
 		m = ft_matmul(&m, &rot);
 	}
-
 	return (m);
 }
 
