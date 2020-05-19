@@ -14,17 +14,23 @@ void		error(const char *err)
 	exit(1);
 }
 
-char		**file_checker(char *line, char c)
+char		**file_checker(char *line, int *len, char c)
 {
-	int 	len;
+	int 	tmp;
 	char	**tab;
 
 	tab = ft_strsplit(&line[1], ' ');
 
-	len = get_tab_len((void**)tab);
+	tmp = get_tab_len((void**)tab);
 
-	if ((c == 'v' && len != 3) || (c == 'f' && (len < 3 || len > 4)))
+	if ((c == 'v' && tmp != 3) || (c == 'f' && (tmp < 3 || tmp > 4)))
 		error("Erroneous data.");
+
+	if (c == 'f')
+	{
+		*len = tmp == 4 ? 6 : 3;
+		env->obj.f_len += *len;
+	}
 
 	return (tab);
 }
