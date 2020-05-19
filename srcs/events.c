@@ -16,74 +16,43 @@ void	move_obj(t_env *env)
 {
 	t_vec tmp;
 
+	tmp = ft_vmulx(&env->cam.lgtnal, 0.01);
 	if (env->sdl.evnt.key.keysym.scancode == I)
-	{
-		tmp = ft_vmulx(&env->cam.lgtnal, 0.01);
 		env->obj.iner = ft_vadd(&env->obj.iner, &tmp);
-	}
 	if (env->sdl.evnt.key.keysym.scancode == K)
-	{
-		tmp = ft_vmulx(&env->cam.lgtnal, 0.01);
 		env->obj.iner = ft_vsub(&env->obj.iner, &tmp);
-	}
+	tmp = ft_vmulx(&env->cam.trvsal, 0.01);
 	if (env->sdl.evnt.key.keysym.scancode == J)
-	{
-		tmp = ft_vmulx(&env->cam.trvsal, 0.01);
 		env->obj.iner = ft_vsub(&env->obj.iner, &tmp);
-	}
 	if (env->sdl.evnt.key.keysym.scancode == L)
-	{
-		tmp = ft_vmulx(&env->cam.trvsal, 0.01);
 		env->obj.iner = ft_vadd(&env->obj.iner, &tmp);
-	}
+	tmp = convec(env->cam.sgttal.x, 0, env->cam.sgttal.z);
+	tmp = ft_vmulx(&tmp, 0.01);
 	if (env->sdl.evnt.key.keysym.scancode == U)
-	{
-		tmp = convec(env->cam.sgttal.x, 0, env->cam.sgttal.z);
-		tmp = ft_vmulx(&tmp, 0.01);
 		env->obj.iner = ft_vsub(&env->obj.iner, &tmp);
-	}
 	if (env->sdl.evnt.key.keysym.scancode == O)
-	{
-		tmp = convec(env->cam.sgttal.x, 0, env->cam.sgttal.z);
-		tmp = ft_vmulx(&tmp, 0.01);
 		env->obj.iner = ft_vadd(&env->obj.iner, &tmp);
-	}
 }
 
 void	move_cam(t_env *env)
 {
 	t_vec tmp;
 
+	tmp = ft_vmulx(&env->cam.lgtnal, env->cam.velo);
 	if (env->sdl.evnt.key.keysym.scancode == Z)
-	{
-		tmp = ft_vmulx(&env->cam.lgtnal, env->cam.velo);
 		env->cam.iner = ft_vadd(&env->cam.iner, &tmp);
-	}
 	if (env->sdl.evnt.key.keysym.scancode == S)
-	{
-		tmp = ft_vmulx(&env->cam.lgtnal, env->cam.velo);
 		env->cam.iner = ft_vsub(&env->cam.iner, &tmp);
-	}
+	tmp = ft_vmulx(&env->cam.trvsal, env->cam.velo);
 	if (env->sdl.evnt.key.keysym.scancode == Q)
-	{
-		tmp = ft_vmulx(&env->cam.trvsal, env->cam.velo);
 		env->cam.iner = ft_vsub(&env->cam.iner, &tmp);
-	}
 	if (env->sdl.evnt.key.keysym.scancode == D)
-	{
-		tmp = ft_vmulx(&env->cam.trvsal, env->cam.velo);
 		env->cam.iner = ft_vadd(&env->cam.iner, &tmp);
-	}
+	tmp = ft_vmulx(&env->cam.sgttal, env->cam.velo);
 	if (env->sdl.evnt.key.keysym.scancode == A)
-	{
-		tmp = ft_vmulx(&env->cam.sgttal, env->cam.velo);
 		env->cam.iner = ft_vsub(&env->cam.iner, &tmp);
-	}
 	if (env->sdl.evnt.key.keysym.scancode == E)
-	{
-		tmp = ft_vmulx(&env->cam.sgttal, env->cam.velo);
 		env->cam.iner = ft_vadd(&env->cam.iner, &tmp);
-	}
 }
 
 void	apply_texture(t_env *env)

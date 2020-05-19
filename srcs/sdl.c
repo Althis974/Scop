@@ -16,7 +16,7 @@ int		sdl_init_next(t_env *env)
 {
 	if(!env->sdl.win)
 	{
-		write(2, "Error Creating window: ", 23);
+		write(2, "Error: Failed to create window: ", 23);
 		ft_putstr_fd(SDL_GetError(), 2);
 		write(2, "\n", 1);
 		SDL_Quit();

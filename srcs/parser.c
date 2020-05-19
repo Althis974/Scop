@@ -123,7 +123,7 @@ void		parser(t_env *env)
 	char	*line;
 
 	if ((fd = open(env->obj.filename, O_RDWR)) == -1)
-		error("Failed to open obj file.");
+		error("Failed to open .obj file.");
 	while (get_next_line(fd, &line))
 	{
 		if (line[0] == 'v' && line[1] == ' ')
