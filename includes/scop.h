@@ -25,7 +25,7 @@
 # include <OpenGL/gl3.h>
 
 # ifndef GL_BGR
-# define GL_BGR 0x80E0
+#	define GL_BGR 0x80E0
 # endif
 
 # define WIN_W 1000
@@ -71,9 +71,9 @@ typedef struct		s_sdl
 
 typedef struct		s_shader
 {
-	GLuint			vrtxID;
-	GLuint			fragID;
-	GLuint			prgmID;
+	GLuint			vrtx_id;
+	GLuint			frag_id;
+	GLuint			prgm_id;
 	GLint			mvploc;
 	GLint			txtloc;
 	GLint			colloc;

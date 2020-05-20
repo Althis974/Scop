@@ -17,14 +17,14 @@ void			create_program(t_env *env)
 	GLint	link_err;
 
 	env->shader.prgmID = glCreateProgram();
-	glAttachShader(env->shader.prgmID, env->shader.vrtxID);
-	glAttachShader(env->shader.prgmID, env->shader.fragID);
-	glLinkProgram(env->shader.prgmID);
-	glGetProgramiv(env->shader.prgmID, GL_LINK_STATUS, &link_err);
+	glAttachShader(env->shader.prgm_id, env->shader.vrtx_id);
+	glAttachShader(env->shader.prgm_id, env->shader.frag_id);
+	glLinkProgram(env->shader.prgm_id);
+	glGetProgramiv(env->shader.prgm_id, GL_LINK_STATUS, &link_err);
 	if (!link_err)
 		error("Failed to link program.");
-	glDeleteShader(env->shader.vrtxID);
-	glDeleteShader(env->shader.fragID);
+	glDeleteShader(env->shader.vrtx_id);
+	glDeleteShader(env->shader.frag_id);
 }
 
 const GLchar	*get_shader(char *filename)
@@ -68,15 +68,15 @@ GLuint			compile_shader(char *filename, int type)
 
 void			load_shader(t_env *env)
 {
-	env->shader.vrtxID = compile_shader("./Shaders/vertex.glsl",
+	env->shader.vrtx_id = compile_shader("./Shaders/vertex.glsl",
 			GL_VERTEX_SHADER);
-	env->shader.fragID = compile_shader("./Shaders/fragment.glsl",
+	env->shader.frag_id = compile_shader("./Shaders/fragment.glsl",
 			GL_FRAGMENT_SHADER);
 	create_program(env);
-	env->shader.mvploc = glGetUniformLocation(env->shader.prgmID, "mvp");
-	env->shader.txtloc = glGetUniformLocation(env->shader.prgmID, "apply");
-	env->shader.colloc = glGetUniformLocation(env->shader.prgmID, "color");
-	env->shader.itploc = glGetUniformLocation(env->shader.prgmID, "inter");
+	env->shader.mvploc = glGetUniformLocation(env->shader.prgm_id, "mvp");
+	env->shader.txtloc = glGetUniformLocation(env->shader.prgm_id, "apply");
+	env->shader.colloc = glGetUniformLocation(env->shader.prgm_id, "color");
+	env->shader.itploc = glGetUniformLocation(env->shader.prgm_id, "inter");
 }
 
 void			update_shaders(t_env *env)
