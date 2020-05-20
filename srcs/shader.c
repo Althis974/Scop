@@ -74,8 +74,7 @@ void			load_shader(t_env *env)
 			GL_FRAGMENT_SHADER);
 	create_program(env);
 	env->shader.mvploc = glGetUniformLocation(env->shader.prgm_id, "mvp");
-	env->shader.txtloc = glGetUniformLocation(env->shader.prgm_id, "txt");
-	env->shader.apploc = glGetUniformLocation(env->shader.prgm_id, "apply");
+	env->shader.txtloc = glGetUniformLocation(env->shader.prgm_id, "apply");
 	env->shader.colloc = glGetUniformLocation(env->shader.prgm_id, "color");
 	env->shader.itploc = glGetUniformLocation(env->shader.prgm_id, "inter");
 }
@@ -83,8 +82,7 @@ void			load_shader(t_env *env)
 void			update_shaders(t_env *env)
 {
 	glUniformMatrix4fv(env->shader.mvploc, 1, GL_FALSE, env->live.mvp.m);
-	//glUniform1i(env->shader.txtloc, env->event.txt);
-	glUniform1i(env->shader.apploc, env->event.txt);
+	glUniform1i(env->shader.txtloc, env->event.txt);
 	glUniform1i(env->shader.colloc, env->event.col);
 	glUniform1i(env->shader.itploc, env->event.itp);
 }
