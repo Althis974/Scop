@@ -27,9 +27,9 @@ int 		init(t_env *env)
 	env->obj.iner = (t_vec){0, 0, 0};
 	env->obj.sym_ax = (t_vec){0, 0, 0};
 	env->obj.velo = 0.33;
-	env->shader.vrtxID = 0;
-	env->shader.fragID = 0;
-	env->shader.prgmID = 0;
+	env->shader.vrtx_id = 0;
+	env->shader.frag_id = 0;
+	env->shader.prgm_id = 0;
 	env->event.txt = 0;
 	env->event.col = 0;
 	env->event.itp = 0;
@@ -44,7 +44,7 @@ int			main_loop(t_env *env)
 		return (0);
 	set_view(env);
 	env->live.model = ft_matmul(&env->obj.trans, &env->obj.rot);
-	glUseProgram(env->shader.prgmID);
+	glUseProgram(env->shader.prgm_id);
 	set_mvp(env);
 	update_shaders(env);
 	glBindTexture(GL_TEXTURE_2D, env->sdl.txt);
