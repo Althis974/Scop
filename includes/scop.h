@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCOP_SCOP_H
-#define SCOP_SCOP_H
+# ifndef SCOP_SCOP_H
+# define SCOP_SCOP_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include "keycode.h"
-#include "../libft/libft.h"
-#include <SDL2/SDL.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include "keycode.h"
+# include "../libft/libft.h"
+# include <SDL2/SDL.h>
 
-#define GL_SILENCE_DEPRECATION
-#define GL3_PROTOTYPES 1
-#include <OpenGL/gl3.h>
+# define GL_SILENCE_DEPRECATION
+# define GL3_PROTOTYPES 1
+# include <OpenGL/gl3.h>
 
-#ifndef GL_BGR
+# ifndef GL_BGR
 #	define GL_BGR 0x80E0
-#endif
+# endif
 
 # define WIN_W 1000
 # define WIN_H 1000
