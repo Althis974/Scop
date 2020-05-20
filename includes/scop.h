@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef SCOP_SCOP_H
+#ifndef SCOP_SCOP_H
 # define SCOP_SCOP_H
 
 # include <stdlib.h>
@@ -25,7 +25,7 @@
 # include <OpenGL/gl3.h>
 
 # ifndef GL_BGR
-#	define GL_BGR 0x80E0
+# define GL_BGR 0x80E0
 # endif
 
 # define WIN_W 1000
@@ -52,7 +52,7 @@ typedef struct		s_sdl
 	SDL_GLContext	ctxt;
 	SDL_Event		evnt;
 	GLuint			vao;
-	GLuint 			vbo_v;
+	GLuint			vbo_v;
 	GLuint			vbo_c;
 	GLuint			txt;
 }					t_sdl;
@@ -194,8 +194,8 @@ typedef struct		s_obj
 typedef struct		s_env
 {
 	t_sdl			sdl;
-	t_shader 		shader;
-	t_cam 			cam;
+	t_shader		shader;
+	t_cam			cam;
 	t_obj			obj;
 	t_live			live;
 	t_event			event;
@@ -244,7 +244,7 @@ void				live_action(t_env *env);
 **	Events
 */
 
-int 				events(t_env *env);
+int					events(t_env *env);
 
 /*
 **	Textures
