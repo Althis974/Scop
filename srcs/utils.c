@@ -22,7 +22,10 @@ char		**file_checker(t_env *env, char *line, int *len, char c)
 	tab = ft_strsplit(&line[1], ' ');
 	tmp = get_tab_len((void**)tab);
 	if ((c == 'v' && tmp != 3) || (c == 'f' && (tmp < 3 || tmp > 4)))
+	{
+		printf("line = %s\n", line);
 		error("Erroneous data.");
+	}
 	if (c == 'f')
 	{
 		*len = tmp == 4 ? 6 : 3;
