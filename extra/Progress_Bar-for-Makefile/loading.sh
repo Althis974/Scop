@@ -16,7 +16,7 @@
 # Loading progressbar
 source $1/progressbar.sh || exit 1
 
-i=0 start=0 end=6
+i=0 start=0 end=2
 for i in $(seq ${start} ${end}); do
 	if [[ ("$3" != "o") ]] ; then
 		sleep 0.1
