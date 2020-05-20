@@ -6,7 +6,7 @@
 /*   By: rlossy <rlossy@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 10:08:13 by rlossy            #+#    #+#             */
-/*   Updated: 2020/05/18 11:58:09 by rlossy           ###   ########lyon.fr   */
+/*   Updated: 2020/05/20 10:51:58 by rlossy           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <OpenGL/gl3.h>
 
 # ifndef GL_BGR
-#	define GL_BGR 0x80E0
+#  define GL_BGR 0x80E0
 # endif
 
 # define WIN_W 1000
