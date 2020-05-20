@@ -58,7 +58,7 @@ void	move_cam(t_env *env)
 void	apply_texture(t_env *env)
 {
 	if (env->obj.txt.img)
-		ft_strdel(&env->obj.txt.img);
+		ft_strdel((char**)&env->obj.txt.img);
 	env->event.txt = env->event.txt == 4 ? 0 : env->event.txt + 1;
 	if (env->event.txt == 1)
 		load_texture(env, "./textures/kitten.bmp");
