@@ -21,7 +21,7 @@ void	vcpy(t_vec *v1, t_vec *v2)
 
 t_vec	convec(double x, double y, double z)
 {
-	t_vec	v;
+	t_vec v;
 
 	v.x = x;
 	v.y = y;
