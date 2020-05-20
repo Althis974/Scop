@@ -20,17 +20,13 @@ char		**file_checker(t_env *env, char *line, int *len, char c)
 	char	**tab;
 
 	tab = ft_strsplit(&line[1], ' ');
-
 	tmp = get_tab_len((void**)tab);
-
 	if ((c == 'v' && tmp != 3) || (c == 'f' && (tmp < 3 || tmp > 4)))
 		error("Erroneous data.");
-
 	if (c == 'f')
 	{
 		*len = tmp == 4 ? 6 : 3;
 		env->obj.f_len += *len;
 	}
-
 	return (tab);
 }

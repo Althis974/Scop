@@ -48,9 +48,6 @@ GLuint		*get_faces(t_env *env, char *line)
 
 	len = 0;
 	tab = file_checker(env, line, &len, 'f');
-	//len = get_tab_len((void**)tab) == 4 ? 6 : 3;
-	//env->obj.f_len += len;
-	printf("len = %d\n", len);
 	new = (GLuint*)malloc(sizeof(GLuint) * env->obj.f_len);
 	i = -1;
 	while (++i < env->obj.f_len - len)
