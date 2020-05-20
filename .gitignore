@@ -23,7 +23,8 @@ build/
 
 # random files
 
-
+tags
+test.obj
 
 # valgrind files
 
@@ -32,5 +33,3 @@ build/
 # executable
 
 scop
-tags
-test.obj
