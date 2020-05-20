@@ -14,7 +14,7 @@
 
 int		sdl_init_next(t_env *env)
 {
-	if(!env->sdl.win)
+	if (!env->sdl.win)
 	{
 		write(2, "Error: Failed to create window: ", 23);
 		ft_putstr_fd(SDL_GetError(), 2);
@@ -23,7 +23,7 @@ int		sdl_init_next(t_env *env)
 		return (-1);
 	}
 	env->sdl.ctxt = SDL_GL_CreateContext(env->sdl.win);
-	if(!env->sdl.ctxt)
+	if (!env->sdl.ctxt)
 	{
 		error(SDL_GetError());
 		SDL_DestroyWindow(env->sdl.win);
@@ -35,7 +35,7 @@ int		sdl_init_next(t_env *env)
 
 int		sdl_init(t_env *env)
 {
-	if(SDL_Init(SDL_INIT_VIDEO) < 0)
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		error(SDL_GetError());
 		SDL_Quit();
@@ -77,10 +77,10 @@ void	opengl_set_buffers(t_env *env)
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, env->obj.f_size, env->obj.faces,
 			GL_DYNAMIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
-			(GLvoid *) 0);
+			(GLvoid *)0);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
-			(GLvoid *) (3 * sizeof(GLfloat)));
+			(GLvoid *)(3 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(1);
 }
 
@@ -93,7 +93,7 @@ void	opengl_set_texture(t_env *env)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, env->obj.txt.w, env->obj.txt.h, 0,
-				 GL_RGB, GL_UNSIGNED_BYTE, env->obj.txt.img);
+			GL_RGB, GL_UNSIGNED_BYTE, env->obj.txt.img);
 	glGenerateMipmap(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, 0);
 }

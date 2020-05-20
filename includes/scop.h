@@ -256,7 +256,7 @@ void				load_texture(t_env *env, char *filename);
 **	Utils
 */
 
-void				usage();
+void				usage(void);
 void				error(const char *err);
 
 #endif

@@ -21,8 +21,8 @@ void	set_projection(t_env *env)
 	far = 100.0;
 	near = 0.001;
 	s = 1 / (tan(FOV * 0.5 * M_PI / 180.0));
-	set_mat(&env->live.projection, 0),
-			env->live.projection.m[0] = s / ((float)WIN_W / (float)WIN_H);
+	set_mat(&env->live.projection, 0);
+	env->live.projection.m[0] = s / ((float)WIN_W / (float)WIN_H);
 	env->live.projection.m[5] = s;
 	env->live.projection.m[10] = -(far + near) / (far - near);
 	env->live.projection.m[11] = -1;

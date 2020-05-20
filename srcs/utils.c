@@ -1,7 +1,7 @@
 
 #include "../includes/scop.h"
 
-void		usage()
+void		usage(void)
 {
 	write(2, "usage : ./scop <filename>\n", 26);
 }
@@ -16,7 +16,7 @@ void		error(const char *err)
 
 char		**file_checker(t_env *env, char *line, int *len, char c)
 {
-	int 	tmp;
+	int		tmp;
 	char	**tab;
 
 	tab = ft_strsplit(&line[1], ' ');
