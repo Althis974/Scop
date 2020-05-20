@@ -14,7 +14,7 @@ void		error(const char *err)
 	exit(1);
 }
 
-char		**file_checker(char *line, int *len, char c)
+char		**file_checker(t_env *env, char *line, int *len, char c)
 {
 	int 	tmp;
 	char	**tab;

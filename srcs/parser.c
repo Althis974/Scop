@@ -18,7 +18,7 @@ GLfloat		*get_vertices(t_env *env, char *line)
 	char	**tab;
 	GLfloat	*new;
 
-	tab = file_checker(line, &i, 'v');
+	tab = file_checker(env, line, &i, 'v');
 	env->obj.v_len += 6;
 	new = (GLfloat*)malloc(sizeof(GLfloat) * env->obj.v_len);
 	i = -1;
@@ -47,7 +47,7 @@ GLuint		*get_faces(t_env *env, char *line)
 	GLuint	*new;
 
 	len = 0;
-	tab = file_checker(line, &len, 'f');
+	tab = file_checker(env, line, &len, 'f');
 	//len = get_tab_len((void**)tab) == 4 ? 6 : 3;
 	//env->obj.f_len += len;
 	printf("len = %d\n", len);
