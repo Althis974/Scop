@@ -16,7 +16,7 @@ void			create_program(t_env *env)
 {
 	GLint	link_err;
 
-	env->shader.prgmID = glCreateProgram();
+	env->shader.prgm_id = glCreateProgram();
 	glAttachShader(env->shader.prgm_id, env->shader.vrtx_id);
 	glAttachShader(env->shader.prgm_id, env->shader.frag_id);
 	glLinkProgram(env->shader.prgm_id);
