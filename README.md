@@ -50,3 +50,58 @@ puissiez présenter en soutenance au moins le logo de 42 fourni avec ce sujet, t
 comme couleurs pour les facettes, et une texture de poneys, licornes ou chatons, au choix.
 
 Lors de la soutenance, d’autres objets 3D seront bien sûr testés.
+
+## How to
+
+```
+make
+```
+
+```
+./scop <.obj file>
+```
+
+## Fonctionnalités
+
+ <table>
+   <tr>
+       <td>Q (A) / D</td>
+       <td>Déplacer caméra sur l'axe X</td>
+   </tr>
+   <tr>
+       <td>Z (W) / S</td>
+       <td>Déplacer caméra sur l'axe Y</td>
+   </tr>
+   <tr>
+       <td>A (Q) / E</td>
+       <td>Déplacer caméra sur l'axe Z</td>
+   </tr>
+   <tr>
+       <td>J / L</td>
+       <td>Déplacer modèle sur l'axe X</td>
+   </tr>
+   <tr>
+       <td>I / K</td>
+       <td>Déplacer modèle sur l'axe Y</td>
+   </tr>
+   <tr>
+       <td>U / O</td>
+       <td>Déplacer modèle sur l'axe Z</td>
+   </tr>
+   <tr>
+       <td>T</td>
+       <td>Appliquer les textures</td>
+   </tr>
+     <tr>
+       <td>C</td>
+       <td>Changer de couleur</td>
+   </tr>
+   <tr>
+       <td>N</td>
+       <td>Modifier interpolation</td>
+   </tr>
+   <tr>
+       <td>ESC</td>
+       <td>Quitter le programme</td>
+   </tr>
+</table>
