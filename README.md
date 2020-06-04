@@ -105,3 +105,23 @@ make
        <td>Quitter le programme</td>
    </tr>
 </table>
+
+## Exemples
+
+### 42 Kittens
+![img](https://i.imgur.com/ssperNS.png)
+
+### Teapot
+![img](https://i.imgur.com/hvOyfxD.png)
+
+### Charizard Fire
+![img](https://i.imgur.com/zFVbisM.png)
+
+### NightFury with interpolation
+![img](https://i.imgur.com/SGMtYry.png)
+
+### Crash in color with interpolation
+![img](https://i.imgur.com/7njXXXk.png)
+
+### Gun Water
+![img](https://i.imgur.com/GHx5vLv.png)
